@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arabic Grammar Teacher - Lesson 13 Part A</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    [dir="rtl"] {
+      direction: rtl;
+      text-align: right;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-100 via-blue-100 to-purple-100 min-h-screen p-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-2xl p-8">
+      <div class="mb-6 pb-4 border-b-2 border-gray-200">
+        <h1 class="text-3xl font-bold text-center text-indigo-900">
+          Madina Arabic - Lesson 13 Part A
+        </h1>
+        <p class="text-center text-gray-600 mt-2">Pronouns & Demonstratives</p>
+      </div>
+
+      <div id="app"></div>
+    </div>
+  </div>
+
+  <script>
+    const lesson13a = {
+      title: "الدَّرْسُ الثَّالِثَ عَشَرَ (أ) - Lesson 13 Part A",
+      subtitle: "Pronouns & Demonstratives (الضَّمَائِر وَأَسْمَاءُ الإِشَارَةِ)",
+
+      sentences: [
+        {
+          arabic: "أَنَا طَالِبٌ",
+          transliteration: "anā taalibun",
+          english: "I am a student",
+          transforms: {
+            pronoun: "أَنَا (anā) - I (1st person singular)",
+            variants: [
+              "أَنَا - I (masculine/feminine - same form)",
+              "نَحْنُ - We (1st person plural)"
+            ],
+            steps: [
+              "أَنَا is used for both masculine and feminine",
+              "It's a separate/detached pronoun (ضَمِيرٌ مُنْفَصِل)",
+              "Always functions as mubtada in nominal sentences"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "أَنَا - Mubtada (Subject) - Detached Pronoun (1st person)",
+              "طَالِبٌ - Khabar (Predicate) - Indefinite noun with tanween"
+            ],
+            rules: [
+              "Detached pronouns can be mubtada",
+              "First person pronoun: أَنَا (I), نَحْنُ (we)",
+              "Khabar must match mubtada in gender"
+            ]
+          }
+        },
+        {
+          arabic: "أَنْتَ طَبِيبٌ",
+          transliteration: "anta tabībun",
+          english: "You are a doctor (masculine)",
+          transforms: {
+            pronoun: "أَنْتَ (anta) - You (2nd person masc. sg)",
+            fem: "أَنْتِ (anti) - You (2nd person fem. sg)",
+            variants: [
+              "أَنْتَ - You (masculine singular)",
+              "أَنْتِ - You (feminine singular)",
+              "أَنْتُمَا - You (dual - both genders)",
+              "أَنْتُمْ - You (masculine plural)",
+              "أَنْتُنَّ - You (feminine plural)"
+            ],
+            steps: [
+              "أَنْتَ (anta) for masculine",
+              "أَنْتِ (anti) for feminine",
+              "Used when addressing someone directly"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "أَنْتَ - Mubtada - 2nd person masculine singular pronoun",
+              "طَبِيبٌ - Khabar - Masculine noun (matches pronoun gender)"
+            ],
+            rules: [
+              "Second person pronouns: أَنْتَ (you-masc), أَنْتِ (you-fem)",
+              "Khabar must agree with pronoun in gender",
+              "Used for addressing people"
+            ]
+          }
+        },
+        {
+          arabic: "أَنْتِ طَبِيبَةٌ",
+          transliteration: "anti tabībatun",
+          english: "You are a doctor (feminine)",
+          transforms: {
+            masc: "أَنْتَ طَبِيبٌ (you-masc are a doctor-masc)",
+            fem: "أَنْتِ طَبِيبَةٌ (you-fem are a doctor-fem)",
+            steps: [
+              "أَنْتَ (anta) → أَنْتِ (anti) for feminine",
+              "طَبِيبٌ (masc) → طَبِيبَةٌ (fem) - add ة",
+              "Both pronoun AND khabar must be feminine"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "أَنْتِ - Mubtada - 2nd person feminine singular pronoun",
+              "طَبِيبَةٌ - Khabar - Feminine noun (matches pronoun)"
+            ],
+            rules: [
+              "Feminine 2nd person: أَنْتِ",
+              "Gender agreement throughout the sentence",
+              "Notice the kasra under the taa: أَنْتِ"
+            ]
+          }
+        },
+        {
+          arabic: "هُوَ مُعَلِّمٌ",
+          transliteration: "huwa mu'allimun",
+          english: "He is a teacher",
+          transforms: {
+            masc: "هُوَ (huwa) - He (3rd person masc. sg)",
+            fem: "هِيَ (hiya) - She (3rd person fem. sg)",
+            variants: [
+              "هُوَ - He (3rd person masculine singular)",
+              "هِيَ - She (3rd person feminine singular)",
+              "هُمَا - They (dual - both genders)",
+              "هُمْ - They (masculine plural)",
+              "هُنَّ - They (feminine plural)"
+            ],
+            steps: [
+              "هُوَ for masculine (he)",
+              "هِيَ for feminine (she)",
+              "Most commonly used pronouns in Arabic"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "هُوَ - Mubtada - 3rd person masculine pronoun (he)",
+              "مُعَلِّمٌ - Khabar - Masculine noun"
+            ],
+            rules: [
+              "Third person pronouns refer to someone absent",
+              "هُوَ (he), هِيَ (she), هُمْ (they-masc), هُنَّ (they-fem)",
+              "Most frequently used in Arabic"
+            ]
+          }
+        },
+        {
+          arabic: "هِيَ مُعَلِّمَةٌ",
+          transliteration: "hiya mu'allimatun",
+          english: "She is a teacher",
+          transforms: {
+            masc: "هُوَ مُعَلِّمٌ (he is a teacher-masc)",
+            fem: "هِيَ مُعَلِّمَةٌ (she is a teacher-fem)",
+            steps: [
+              "هُوَ (huwa - he) → هِيَ (hiya - she)",
+              "مُعَلِّمٌ (masc) → مُعَلِّمَةٌ (fem) - add ة",
+              "Complete gender agreement required"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "هِيَ - Mubtada - 3rd person feminine pronoun (she)",
+              "مُعَلِّمَةٌ - Khabar - Feminine noun with taa marbuta"
+            ],
+            rules: [
+              "Feminine 3rd person: هِيَ",
+              "Khabar takes feminine form",
+              "Gender agreement is mandatory"
+            ]
+          }
+        },
+        {
+          arabic: "هَـٰذَا كِتَابٌ جَدِيدٌ",
+          transliteration: "haadhaa kitaabun jadīdun",
+          english: "This is a new book",
+          transforms: {
+            masc: "هَـٰذَا (haadhaa) - This (masc. sg near)",
+            fem: "هَـٰذِهِ (haadhihi) - This (fem. sg near)",
+            variants: [
+              "هَـٰذَا - This (masculine singular - near)",
+              "هَـٰذِهِ - This (feminine singular - near)",
+              "هَـٰذَانِ - These (masculine dual)",
+              "هَـٰتَانِ - These (feminine dual)",
+              "هَؤُلاَءِ - These (plural - all genders)"
+            ],
+            steps: [
+              "هَـٰذَا for nearby masculine singular",
+              "هَـٰذِهِ for nearby feminine singular",
+              "Used to point at things close to you"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "هَـٰذَا - Mubtada - Demonstrative pronoun (this-masc)",
+              "كِتَابٌ - Khabar and Mawsoof - Masculine noun",
+              "جَدِيدٌ - Sifa (Adjective) - Must match noun"
+            ],
+            rules: [
+              "Demonstratives can be mubtada",
+              "هَـٰذَا for masculine, هَـٰذِهِ for feminine",
+              "Adjective must match noun in gender, case, definiteness"
+            ]
+          }
+        },
+        {
+          arabic: "ذَٰلِكَ بَيْتٌ كَبِيرٌ",
+          transliteration: "dhaalika baytun kabīrun",
+          english: "That is a big house",
+          transforms: {
+            near: "هَـٰذَا (this - near)",
+            far: "ذَٰلِكَ (that - far)",
+            variants: [
+              "ذَٰلِكَ - That (masculine singular - distant)",
+              "تِلْكَ - That (feminine singular - distant)",
+              "أُولَـٰئِكَ - Those (plural - distant)"
+            ],
+            steps: [
+              "ذَٰلِكَ for distant masculine objects",
+              "تِلْكَ for distant feminine objects",
+              "Opposite of هَـٰذَا / هَـٰذِهِ (this)"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "ذَٰلِكَ - Mubtada - Distant demonstrative (that-masc)",
+              "بَيْتٌ - Khabar and Mawsoof - Masculine noun",
+              "كَبِيرٌ - Sifa - Adjective matching noun"
+            ],
+            rules: [
+              "ذَٰلِكَ (that-masc), تِلْكَ (that-fem) for distant objects",
+              "Opposite of هَـٰذَا / هَـٰذِهِ (this)",
+              "Same agreement rules apply"
+            ]
+          }
+        },
+        {
+          arabic: "نَحْنُ طُلاَّبٌ",
+          transliteration: "nahnu tullaabun",
+          english: "We are students",
+          transforms: {
+            singular: "أَنَا طَالِبٌ (I am a student)",
+            plural: "نَحْنُ طُلاَّبٌ (we are students)",
+            steps: [
+              "أَنَا (I) → نَحْنُ (we) for plural",
+              "طَالِبٌ (student-sg) → طُلاَّبٌ (students-broken plural)",
+              "نَحْنُ is used for all genders"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
+            parts: [
+              "نَحْنُ - Mubtada - 1st person plural pronoun (we)",
+              "طُلاَّبٌ - Khabar - Broken plural of طَالِب"
+            ],
+            rules: [
+              "نَحْنُ is the plural of أَنَا",
+              "Used for 'we' regardless of gender",
+              "Takes plural khabar"
+            ]
+          }
+        }
+      ],
+
+      quiz: [
+        {
+          question: "What is the pronoun for 'I' in Arabic?",
+          options: ["أَنْتَ", "أَنَا", "هُوَ", "نَحْنُ"],
+          correct: 1,
+          explanation: "أَنَا (anā) means 'I'. It's used for both masculine and feminine."
+        },
+        {
+          question: "Which pronoun is feminine: 'you' (singular)?",
+          options: ["أَنْتَ", "أَنْتِ", "هُوَ", "هِيَ"],
+          correct: 1,
+          explanation: "أَنْتِ (anti) is 'you' (feminine singular). أَنْتَ is masculine."
+        },
+        {
+          question: "What does هُوَ mean?",
+          options: ["I", "You", "He", "She"],
+          correct: 2,
+          explanation: "هُوَ (huwa) means 'he' (3rd person masculine singular)."
+        },
+        {
+          question: "Which demonstrative is used for nearby feminine objects?",
+          options: ["هَـٰذَا", "هَـٰذِهِ", "ذَٰلِكَ", "هَؤُلاَءِ"],
+          correct: 1,
+          explanation: "هَـٰذِهِ (haadhihi) means 'this' (feminine, near). هَـٰذَا is masculine."
+        },
+        {
+          question: "What is the pronoun for 'we'?",
+          options: ["أَنَا", "نَحْنُ", "أَنْتُمْ", "هُمْ"],
+          correct: 1,
+          explanation: "نَحْنُ (nahnu) means 'we' (1st person plural)."
+        },
+        {
+          question: "Which means 'that' (distant, masculine)?",
+          options: ["هَـٰذَا", "هَـٰذِهِ", "ذَٰلِكَ", "تِلْكَ"],
+          correct: 2,
+          explanation: "ذَٰلِكَ (dhaalika) means 'that' (masculine, distant). تِلْكَ is feminine."
+        }
+      ]
+    };
+
+    let state = {
+      currentSection: 'intro',
+      currentSentence: 0,
+      showAnalysis: false,
+      showTransforms: false,
+      quizAnswers: {},
+      showResults: false
+    };
+
+    function playAudio(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ar-SA';
+      utterance.rate = 0.65;
+      speechSynthesis.speak(utterance);
+    }
+
+    function render() {
+      const app = document.getElementById('app');
+      
+      if (state.currentSection === 'intro') {
+        app.innerHTML = `
+          <div class="space-y-6">
+            <div class="text-center">
+              <h1 class="text-4xl font-bold text-indigo-900 mb-2" dir="rtl">${lesson13a.title}</h1>
+              <h2 class="text-2xl text-gray-700 mb-4" dir="rtl">${lesson13a.subtitle}</h2>
+            </div>
+            
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-lg border-2 border-indigo-200">
+              <h3 class="text-xl font-bold text-indigo-900 mb-3 flex items-center">
+                👥 Lesson 13 Part A Focus:
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Detached Pronouns (الضَّمَائِرُ المُنْفَصِلَة)</li>
+                <li>• First Person: أَنَا (I), نَحْنُ (we)</li>
+                <li>• Second Person: أَنْتَ، أَنْتِ (you)</li>
+                <li>• Third Person: هُوَ، هِيَ (he, she)</li>
+                <li>• Demonstrative Pronouns: هَـٰذَا، هَـٰذِهِ، ذَٰلِكَ</li>
+                <li>• Gender Agreement Rules</li>
+              </ul>
+            </div>
+
+            <button onclick="changeSection('lesson')" class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-indigo-700 hover:to-blue-700">
+              Begin Lesson →
+            </button>
+          </div>
+        `;
+      } else if (state.currentSection === 'lesson') {
+        const sentence = lesson13a.sentences[state.currentSentence];
+        app.innerHTML = `
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg border-2 border-indigo-200 shadow-lg">
+              <div class="text-center mb-4">
+                <span class="text-sm text-gray-500">Sentence ${state.currentSentence + 1} of ${lesson13a.sentences.length}</span>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-lg mb-4">
+                <p class="text-5xl mb-4 text-center" dir="rtl">${sentence.arabic}</p>
+                <div class="flex justify-center">
+                  <button onclick="playAudio('${sentence.arabic}')" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 flex items-center gap-2">
+                    🔊 Listen
+                  </button>
+                </div>
+              </div>
+
+              <p class="text-xl text-gray-600 italic mb-2 text-center">${sentence.transliteration}</p>
+              <p class="text-2xl font-semibold text-green-700 mb-4 text-center">${sentence.english}</p>
+
+              <div class="flex gap-2 mb-4">
+                <button onclick="toggleTransforms()" class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700">
+                  ${state.showTransforms ? 'Hide' : 'Show'} Transformations
+                </button>
+                <button onclick="toggleAnalysis()" class="flex-1 bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700">
+                  ${state.showAnalysis ? 'Hide' : 'Show'} Analysis
+                </button>
+              </div>
+
+              ${state.showTransforms ? `
+                <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 mb-4">
+                  <h3 class="font-bold text-blue-900 mb-3 text-xl">Pronoun Forms & Transformations:</h3>
+                  <div class="space-y-3">
+                    ${Object.entries(sentence.transforms).map(([key, value]) => {
+                      if (key === 'variants' && Array.isArray(value)) {
+                        return `<div class="bg-white p-4 rounded-lg">
+                          <p class="font-bold text-blue-800 mb-2">All Forms:</p>
+                          ${value.map(v => `<p class="text-gray-700 mb-1" dir="rtl">• ${v}</p>`).join('')}
+                        </div>`;
+                      }
+                      if (key === 'steps' && Array.isArray(value)) {
+                        return `<div class="bg-white p-4 rounded-lg">
+                          <p class="font-bold text-blue-800 mb-2">Step-by-Step:</p>
+                          ${value.map(step => `<p class="text-gray-700 mb-1" dir="rtl">→ ${step}</p>`).join('')}
+                        </div>`;
+                      }
+                      if (typeof value === 'string') {
+                        return `<div class="bg-white p-3 rounded">
+                          <p class="text-sm font-semibold text-blue-700">${key}:</p>
+                          <p class="text-lg" dir="rtl">${value}</p>
+                        </div>`;
+                      }
+                      return '';
+                    }).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              ${state.showAnalysis ? `
+                <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200 space-y-4">
+                  <div class="bg-white p-4 rounded-lg">
+                    <h3 class="font-bold text-purple-900 mb-2">Sentence Type:</h3>
+                    <p class="text-gray-700" dir="rtl">${sentence.analysis.type}</p>
+                  </div>
+
+                  <div class="bg-white p-4 rounded-lg">
+                    <h3 class="font-bold text-purple-900 mb-3">Components:</h3>
+                    ${sentence.analysis.parts.map(part => `<p class="text-gray-700 mb-2">• ${part}</p>`).join('')}
+                  </div>
+
+                  <div class="bg-white p-4 rounded-lg">
+                    <h3 class="font-bold text-purple-900 mb-2">Grammar Rules:</h3>
+                    <ul class="space-y-2">
+                      ${sentence.analysis.rules.map(rule => `
+                        <li class="flex items-start">
+                          <span class="text-purple-600 mr-2">✓</span>
+                          <span class="text-gray-700">${rule}</span>
+                        </li>
+                      `).join('')}
+                    </ul>
+                  </div>
+                </div>
+              ` : ''}
+            </div>
+
+            <div class="flex justify-between">
+              <button onclick="prevSentence()" ${state.currentSentence === 0 ? 'disabled' : ''} class="bg-gray-300 text-gray-700 py-2 px-6 rounded-lg font-bold hover:bg-gray-400 disabled:opacity-50">
+                ← Previous
+              </button>
+              
+              ${state.currentSentence < lesson13a.sentences.length - 1 ? `
+                <button onclick="nextSentence()" class="bg-indigo-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-indigo-700">
+                  Next →
+                </button>
+              ` : `
+                <button onclick="changeSection('quiz')" class="bg-green-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-green-700">
+                  Quiz 🏆
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      } else if (state.currentSection === 'quiz') {
+        const score = Object.entries(state.quizAnswers).filter(([qIdx, answer]) => 
+          answer === lesson13a.quiz[qIdx].correct
+        ).length;
+
+        app.innerHTML = `
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg border-2 border-orange-200 shadow-lg">
+              <h2 class="text-2xl font-bold text-orange-900 mb-4 flex items-center">
+                🏆 Lesson 13 Part A Quiz
+              </h2>
+
+              ${lesson13a.quiz.map((q, qIdx) => `
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                  <p class="font-semibold text-gray-800 mb-3">${qIdx + 1}. ${q.question}</p>
+                  <div class="space-y-2">
+                    ${q.options.map((option, oIdx) => `
+                      <button onclick="answerQuestion(${qIdx}, ${oIdx})" 
+                        ${state.showResults ? 'disabled' : ''}
+                        class="w-full text-left p-3 rounded-lg border-2 transition-all ${
+                          state.showResults
+                            ? oIdx === q.correct
+                              ? 'bg-green-100 border-green-500'
+                              : state.quizAnswers[qIdx] === oIdx
+                              ? 'bg-red-100 border-red-500'
+                              : 'bg-white border-gray-200'
+                            : state.quizAnswers[qIdx] === oIdx
+                            ? 'bg-blue-100 border-blue-500'
+                            : 'bg-white border-gray-200 hover:bg-gray-100'
+                        }">
+                        ${state.showResults && oIdx === q.correct ? '✓ ' : ''}
+                        ${state.showResults && state.quizAnswers[qIdx] === oIdx && oIdx !== q.correct ? '✗ ' : ''}
+                        ${option}
+                      </button>
+                    `).join('')}
+                  </div>
+                  ${state.showResults ? `
+                    <div class="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <p class="text-sm text-blue-900"><strong>Explanation:</strong> ${q.explanation}</p>
+                    </div>
+                  ` : ''}
+                </div>
+              `).join('')}
+
+              ${!state.showResults ? `
+                <button onclick="submitQuiz()" ${Object.keys(state.quizAnswers).length < lesson13a.quiz.length ? 'disabled' : ''} 
+                  class="w-full bg-orange-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-orange-700 disabled:opacity-50">
+                  Submit Quiz
+                </button>
+              ` : `
+                <div class="text-center">
+                  <div class="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg border-2 border-green-300 mb-4">
+                    <h3 class="text-2xl font-bold text-green-900 mb-2">
+                      Score: ${score} / ${lesson13a.quiz.length}
+                    </h3>
+                    <p class="text-lg text-gray-700">
+                      ${score === lesson13a.quiz.length ? '🎉 Perfect!' : score >= 4 ? '👏 Great!' : '📚 Keep practicing!'}
+                    </p>
+                  </div>
+                  <button onclick="resetLesson()" class="bg-indigo-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-indigo-700">
+                    Review Lesson
+                  </button>
+                </div>
+              `}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function changeSection(section) {
+      state.currentSection = section;
+      render();
+    }
+
+    function nextSentence() {
+      if (state.currentSentence < lesson13a.sentences.length - 1) {
+        state.currentSentence++;
+        state.showAnalysis = false;
+        state.showTransforms = false;
+        render();
+      }
+    }
+
+    function prevSentence() {
+      if (state.currentSentence > 0) {
+        state.currentSentence--;
+        state.showAnalysis = false;
+        state.showTransforms = false;
+        render();
+      }
+    }
+
+    function toggleAnalysis() {
+      state.showAnalysis = !state.showAnalysis;
+      render();
+    }
+
+    function toggleTransforms() {
+      state.showTransforms = !state.showTransforms;
+      render();
+    }
+
+    function answerQuestion(qIdx, oIdx) {
+      if (!state.showResults) {
+        state.quizAnswers[qIdx] = oIdx;
+        render();
+      }
+    }
+
+    function submitQuiz() {
+      state.showResults = true;
+      render();
+    }
+
+    function resetLesson() {
+      state = {
+        currentSection: 'intro',
+        currentSentence: 0,
+        showAnalysis: false,
+        showTransforms: false,
+        quizAnswers: {},
+        showResults: false
+      };
+      render();
+    }
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>
