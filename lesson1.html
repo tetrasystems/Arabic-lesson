@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arabic Grammar Teacher - Lesson 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    [dir="rtl"] {
+      direction: rtl;
+      text-align: right;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-100 via-blue-100 to-purple-100 min-h-screen p-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-2xl shadow-2xl p-8">
+      <div class="mb-6 pb-4 border-b-2 border-gray-200">
+        <h1 class="text-3xl font-bold text-center text-indigo-900">
+          Madina Arabic - Lesson 1
+        </h1>
+        <p class="text-center text-gray-600 mt-2">Demonstrative Pronoun: هَـٰذَا (This)</p>
+      </div>
+
+      <div id="app"></div>
+    </div>
+  </div>
+
+  <script>
+    const lesson1 = {
+      title: "الدَّرْسُ الأَوَّلُ - Lesson 1",
+      subtitle: "اِسْمُ الإِشَارَةِ: هَـٰذَا (Demonstrative Pronoun: This)",
+
+      sentences: [
+        {
+          arabic: "هَـٰذَا بَيْتٌ",
+          transliteration: "haadhaa baytun",
+          english: "This is a house",
+          transforms: {
+            word1: "هَـٰذَا (haadhaa) - This (demonstrative pronoun)",
+            word2: "بَيْتٌ (baytun) - a house",
+            steps: [
+              "هَـٰذَا means 'this' - used for masculine nouns",
+              "بَيْتٌ means 'a house' - indefinite noun with tanween",
+              "NO verb 'is' needed! Arabic doesn't require it",
+              "Structure: هَـٰذَا + indefinite noun = 'This is a...'"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Jumla Ismiyya - Nominal Sentence)",
+            parts: [
+              "هَـٰذَا - Mubtada (المُبْتَدَأ) - Subject (demonstrative pronoun)",
+              "بَيْتٌ - Khabar (الخَبَر) - Predicate (indefinite noun)"
+            ],
+            rules: [
+              "هَـٰذَا is used for MASCULINE singular nouns (near)",
+              "The noun after هَـٰذَا must be INDEFINITE (has tanween ـٌ)",
+              "No verb needed - meaning is understood",
+              "Both parts are in nominative case (marfoo')",
+              "Literally: 'This house' but means 'This is a house'"
+            ]
+          }
+        },
+        {
+          arabic: "هَـٰذَا مَسْجِدٌ",
+          transliteration: "haadhaa masjidun",
+          english: "This is a mosque",
+          transforms: {
+            word1: "هَـٰذَا (haadhaa) - This",
+            word2: "مَسْجِدٌ (masjidun) - a mosque",
+            steps: [
+              "Same pattern: هَـٰذَا + noun",
+              "مَسْجِدٌ from root س-ج-د (to prostrate)",
+              "Tanween (ـٌ) shows indefinite",
+              "Pattern: مَفْعِل (place of action)"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Jumla Ismiyya)",
+            parts: [
+              "هَـٰذَا - Mubtada - Demonstrative (this)",
+              "مَسْجِدٌ - Khabar - Indefinite noun (a mosque)"
+            ],
+            rules: [
+              "Same structure as previous sentence",
+              "مَسْجِدٌ follows pattern مَفْعِل (place of action)",
+              "From root س-ج-د meaning 'to prostrate'",
+              "Indefinite with tanween damma (ـٌ)"
+            ]
+          }
+        },
+        {
+          arabic: "هَـٰذَا كِتَابٌ",
+          transliteration: "haadhaa kitaabun",
+          english: "This is a book",
+          transforms: {
+            word1: "هَـٰذَا (haadhaa) - This",
+            word2: "كِتَابٌ (kitaabun) - a book",
+            steps: [
+              "كِتَابٌ from root ك-ت-ب (to write)",
+              "Pattern: فِعَال",
+              "Very common word in Arabic",
+              "Same demonstrative structure"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Jumla Ismiyya)",
+            parts: [
+              "هَـٰذَا - Mubtada - Demonstrative pronoun",
+              "كِتَابٌ - Khabar - Indefinite noun (a book)"
+            ],
+            rules: [
+              "كِتَابٌ from root ك-ت-ب (k-t-b) meaning 'to write'",
+              "Pattern: فِعَال (common noun pattern)",
+              "Indefinite shown by tanween",
+              "Consistent sentence structure"
+            ]
+          }
+        },
+        {
+          arabic: "هَـٰذَا مَكْتَبٌ",
+          transliteration: "haadhaa maktabun",
+          english: "This is an office/desk",
+          transforms: {
+            word1: "هَـٰذَا (haadhaa) - This",
+            word2: "مَكْتَبٌ (maktabun) - an office/desk",
+            steps: [
+              "مَكْتَبٌ from same root ك-ت-ب (to write)",
+              "Pattern: مَفْعَل (place of action)",
+              "Means 'place of writing' = office/desk",
+              "Notice pattern difference from كِتَاب"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Jumla Ismiyya)",
+            parts: [
+              "هَـٰذَا - Mubtada - Demonstrative",
+              "مَكْتَبٌ - Khabar - Indefinite noun (office/desk)"
+            ],
+            rules: [
+              "مَكْتَبٌ follows pattern مَفْعَل (place)",
+              "Same root as كِتَاب: ك-ت-ب",
+              "Different pattern = different meaning",
+              "مَفْعَل often indicates place of action"
+            ]
+          }
+        },
+        {
+          arabic: "هَـٰذَا بَابٌ",
+          transliteration: "haadhaa baabun",
+          english: "This is a door",
+          transforms: {
+            word1: "هَـٰذَا (haadhaa) - This",
+            word2: "بَابٌ (baabun) - a door",
+            steps: [
+              "بَابٌ means 'door'",
+              "Pattern: فَعَال",
+              "Notice the long vowel (ā)",
+              "Common household word"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Jumla Ismiyya)",
+            parts: [
+              "هَـٰذَا - Mubtada - Demonstrative",
+              "بَابٌ - Khabar - Indefinite noun (door)"
+            ],
+            rules: [
+              "بَابٌ follows pattern فَعَال",
+              "Contains long vowel alif",
+              "Indefinite with tanween",
+              "Same demonstrative structure continues"
+            ]
+          }
+        },
+        {
+          arabic: "هَـٰذَا قَلَمٌ",
+          transliteration: "haadhaa qalamun",
+          english: "This is a pen",
+          transforms: {
+            word1: "هَـٰذَا (haadhaa) - This",
+            word2: "قَلَمٌ (qalamun) - a pen",
+            steps: [
+              "قَلَمٌ means 'pen' or 'pencil'",
+              "Pattern: فَعَل (very common pattern)",
+              "Short vowels only (no long vowels)",
+              "Essential vocabulary word"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Jumla Ismiyya)",
+            parts: [
+              "هَـٰذَا - Mubtada - Demonstrative",
+              "قَلَمٌ - Khabar - Indefinite noun (pen)"
+            ],
+            rules: [
+              "قَلَمٌ follows pattern فَعَل",
+              "Simple three-letter root",
+              "Very common noun pattern",
+              "Useful vocabulary for students"
+            ]
+          }
+        },
+        {
+          arabic: "هَـٰذَا طَالِبٌ",
+          transliteration: "haadhaa taalibun",
+          english: "This is a student",
+          transforms: {
+            word1: "هَـٰذَا (haadhaa) - This",
+            word2: "طَالِبٌ (taalibun) - a student",
+            steps: [
+              "طَالِبٌ means 'student' (one who seeks)",
+              "Pattern: فَاعِل (active participle)",
+              "From root ط-ل-ب (to seek)",
+              "Shows the doer of an action"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ (Jumla Ismiyya)",
+            parts: [
+              "هَـٰذَا - Mubtada - Demonstrative",
+              "طَالِبٌ - Khabar - Indefinite noun (student)"
+            ],
+            rules: [
+              "طَالِبٌ follows pattern فَاعِل (active participle)",
+              "From root ط-ل-ب meaning 'to seek'",
+              "Pattern indicates doer: طَالِب = seeker = student",
+              "Common pattern for professions and descriptions"
+            ]
+          }
+        },
+        {
+          arabic: "مَا هَـٰذَا؟",
+          transliteration: "maa haadhaa?",
+          english: "What is this?",
+          transforms: {
+            word1: "مَا (maa) - What (interrogative particle)",
+            word2: "هَـٰذَا (haadhaa) - this",
+            steps: [
+              "مَا means 'what' - for asking about things",
+              "Word order: مَا + هَـٰذَا",
+              "Question mark (؟) used in Arabic",
+              "Used for non-intelligent things"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ اسْتِفْهَامِيَّة (Interrogative Nominal Sentence)",
+            parts: [
+              "مَا - Interrogative particle (What)",
+              "هَـٰذَا - Mubtada - Demonstrative (this)"
+            ],
+            rules: [
+              "مَا is used to ask 'what' for non-intelligent things",
+              "Word order: مَا comes first",
+              "Answer format: هَـٰذَا + noun",
+              "Example answer: هَـٰذَا كِتَابٌ (This is a book)"
+            ]
+          }
+        },
+        {
+          arabic: "أَهَـٰذَا بَيْتٌ؟",
+          transliteration: "a-haadhaa baytun?",
+          english: "Is this a house?",
+          transforms: {
+            word1: "أَ (a) - Interrogative particle for yes/no questions",
+            word2: "هَـٰذَا بَيْتٌ (haadhaa baytun) - this is a house",
+            steps: [
+              "أَ (hamza) turns statements into yes/no questions",
+              "Add أَ to the beginning: هَـٰذَا بَيْتٌ → أَهَـٰذَا بَيْتٌ؟",
+              "Answer: نَعَمْ (yes) or لَا (no)",
+              "Very simple question formation!"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ اسْتِفْهَامِيَّة (Interrogative Nominal Sentence)",
+            parts: [
+              "أَ - Interrogative particle (for yes/no questions)",
+              "هَـٰذَا - Mubtada - Demonstrative",
+              "بَيْتٌ - Khabar - Indefinite noun"
+            ],
+            rules: [
+              "أَ is added at the beginning to form yes/no questions",
+              "The sentence structure remains the same",
+              "Answer with: نَعَمْ (na'am - yes) or لَا (laa - no)",
+              "Example: نَعَمْ، هَـٰذَا بَيْتٌ (Yes, this is a house)"
+            ]
+          }
+        },
+        {
+          arabic: "أَهَـٰذَا قَلَمٌ؟",
+          transliteration: "a-haadhaa qalamun?",
+          english: "Is this a pen?",
+          transforms: {
+            word1: "أَ (a) - Yes/no question particle",
+            word2: "هَـٰذَا قَلَمٌ - this is a pen",
+            steps: [
+              "Same pattern: أَ + statement = question",
+              "هَـٰذَا قَلَمٌ (statement) → أَهَـٰذَا قَلَمٌ؟ (question)",
+              "Answer format: نَعَمْ، هَـٰذَا قَلَمٌ / لَا، هَـٰذَا كِتَابٌ",
+              "Simple and consistent pattern"
+            ]
+          },
+          analysis: {
+            type: "جُمْلَةٌ إِسْمِيَّةٌ اسْتِفْهَامِيَّة (Interrogative Nominal Sentence)",
+            parts: [
+              "أَ - Interrogative particle",
+              "هَـٰذَا - Mubtada - Demonstrative",
+              "قَلَمٌ - Khabar - Indefinite noun (pen)"
+            ],
+            rules: [
+              "أَ makes any statement into a yes/no question",
+              "Answers: نَعَمْ (yes) or لَا (no)",
+              "Can give full answer: نَعَمْ، هَـٰذَا قَلَمٌ",
+              "Or negative: لَا، هَـٰذَا كِتَابٌ (No, this is a book)"
+            ]
+          }
+        }
+      ],
+
+      quiz: [
+        {
+          question: "What does هَـٰذَا mean?",
+          options: ["That", "This", "These", "Those"],
+          correct: 1,
+          explanation: "هَـٰذَا means 'this' - used for masculine singular nouns that are near."
+        },
+        {
+          question: "In: هَـٰذَا بَيْتٌ - what is بَيْتٌ?",
+          options: ["Mubtada", "Khabar", "Verb", "Preposition"],
+          correct: 1,
+          explanation: "بَيْتٌ is the Khabar (predicate) - it gives information about هَـٰذَا."
+        },
+        {
+          question: "Does the sentence هَـٰذَا مَسْجِدٌ need a verb?",
+          options: ["Yes, always", "No, it's understood", "Sometimes", "Only in questions"],
+          correct: 1,
+          explanation: "No verb needed! Arabic nominal sentences don't need 'is' - it's understood from context."
+        },
+        {
+          question: "What does the tanween (ـٌ) on بَيْتٌ indicate?",
+          options: ["Definite", "Indefinite", "Plural", "Verb"],
+          correct: 1,
+          explanation: "Tanween (ـٌ) shows the noun is indefinite (not specific)."
+        },
+        {
+          question: "Which is the correct question: 'What is this?'",
+          options: ["هَـٰذَا مَا؟", "مَا هَـٰذَا؟", "مَا هُوَ؟", "هَـٰذَا؟"],
+          correct: 1,
+          explanation: "مَا هَـٰذَا؟ is correct. The interrogative particle مَا comes first."
+        },
+        {
+          question: "How do you form a yes/no question from: هَـٰذَا قَلَمٌ?",
+          options: ["مَا هَـٰذَا قَلَمٌ؟", "أَهَـٰذَا قَلَمٌ؟", "هَلْ هَـٰذَا قَلَمٌ؟", "قَلَمٌ هَـٰذَا؟"],
+          correct: 1,
+          explanation: "Add أَ at the beginning: أَهَـٰذَا قَلَمٌ؟ (Is this a pen?)"
+        },
+        {
+          question: "What type of nouns does هَـٰذَا point to?",
+          options: [
+            "Feminine plural",
+            "Masculine singular (near)",
+            "Masculine plural",
+            "Any noun"
+          ],
+          correct: 1,
+          explanation: "هَـٰذَا is used ONLY for masculine singular nouns that are near (close)."
+        },
+        {
+          question: "What is the answer to: أَهَـٰذَا بَيْتٌ؟ (positive answer)",
+          options: ["لَا", "نَعَمْ", "مَا", "أَنَا"],
+          correct: 1,
+          explanation: "نَعَمْ (na'am) means 'yes'. Full answer: نَعَمْ، هَـٰذَا بَيْتٌ"
+        }
+      ],
+
+      vocabQuiz: [
+        {
+          question: "What does بَيْتٌ mean?",
+          options: ["Book", "House", "Door", "Pen"],
+          correct: 1,
+          explanation: "بَيْتٌ (baytun) means 'house' or 'home'."
+        },
+        {
+          question: "What does مَسْجِدٌ mean?",
+          options: ["Office", "Mosque", "School", "Building"],
+          correct: 1,
+          explanation: "مَسْجِدٌ (masjidun) means 'mosque' - from root س-ج-د (to prostrate)."
+        },
+        {
+          question: "What does كِتَابٌ mean?",
+          options: ["Writer", "Book", "Letter", "Paper"],
+          correct: 1,
+          explanation: "كِتَابٌ (kitaabun) means 'book' - from root ك-ت-ب (to write)."
+        },
+        {
+          question: "What does مَكْتَبٌ mean?",
+          options: ["Book", "Library", "Office/Desk", "Writer"],
+          correct: 2,
+          explanation: "مَكْتَبٌ (maktabun) means 'office' or 'desk' - place of writing."
+        },
+        {
+          question: "What does بَابٌ mean?",
+          options: ["Window", "Door", "Wall", "Room"],
+          correct: 1,
+          explanation: "بَابٌ (baabun) means 'door'."
+        },
+        {
+          question: "What does قَلَمٌ mean?",
+          options: ["Paper", "Pen", "Pencil", "Both B and C"],
+          correct: 3,
+          explanation: "قَلَمٌ (qalamun) means 'pen' or 'pencil' - any writing instrument."
+        },
+        {
+          question: "What does طَالِبٌ mean?",
+          options: ["Teacher", "Student", "School", "Book"],
+          correct: 1,
+          explanation: "طَالِبٌ (taalibun) means 'student' - literally 'one who seeks'."
+        },
+        {
+          question: "What does مَا mean?",
+          options: ["Who", "What", "Where", "When"],
+          correct: 1,
+          explanation: "مَا (maa) means 'what' - used for asking about non-intelligent things."
+        },
+        {
+          question: "What does نَعَمْ mean?",
+          options: ["No", "Yes", "Maybe", "What"],
+          correct: 1,
+          explanation: "نَعَمْ (na'am) means 'yes' - used to answer affirmatively."
+        },
+        {
+          question: "What does لَا mean?",
+          options: ["Yes", "No", "This", "That"],
+          correct: 1,
+          explanation: "لَا (laa) means 'no' - used to answer negatively."
+        }
+      ]
+    };
+
+    let state = {
+      currentSection: 'intro',
+      currentSentence: 0,
+      showAnalysis: false,
+      showTransforms: false,
+      quizAnswers: {},
+      showResults: false
+    };
+
+    function playAudio(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ar-SA';
+      utterance.rate = 0.65;
+      speechSynthesis.speak(utterance);
+    }
+
+    function render() {
+      const app = document.getElementById('app');
+      
+      if (state.currentSection === 'intro') {
+        app.innerHTML = `
+          <div class="space-y-6">
+            <div class="text-center">
+              <h1 class="text-4xl font-bold text-indigo-900 mb-2" dir="rtl">${lesson1.title}</h1>
+              <h2 class="text-2xl text-gray-700 mb-4" dir="rtl">${lesson1.subtitle}</h2>
+            </div>
+            
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-lg border-2 border-indigo-200">
+              <h3 class="text-xl font-bold text-indigo-900 mb-3 flex items-center">
+                📖 Lesson 1 Focus - Your First Arabic Sentences!
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Demonstrative Pronoun: هَـٰذَا (haadhaa - "this")</li>
+                <li>• Used for masculine singular nouns (near)</li>
+                <li>• Basic sentence structure: هَـٰذَا + noun</li>
+                <li>• NO verb "is" needed in Arabic!</li>
+                <li>• Tanween (ـٌ) shows indefinite nouns</li>
+                <li>• Question formation with مَا (what)</li>
+              </ul>
+            </div>
+
+            <div class="bg-yellow-50 border-2 border-yellow-300 p-4 rounded-lg">
+              <p class="text-yellow-900 font-semibold">💡 Key Concept:</p>
+              <p class="text-yellow-800">هَـٰذَا literally means "this" but when followed by an indefinite noun, it becomes a complete sentence meaning "This is a..."</p>
+              <p class="text-yellow-800 mt-2">Example: هَـٰذَا بَيْتٌ literally "this house" = "This is a house"</p>
+            </div>
+
+            <button onclick="changeSection('lesson')" class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-indigo-700 hover:to-blue-700">
+              Begin Lesson →
+            </button>
+          </div>
+        `;
+      } else if (state.currentSection === 'lesson') {
+        const sentence = lesson1.sentences[state.currentSentence];
+        app.innerHTML = `
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg border-2 border-indigo-200 shadow-lg">
+              <div class="text-center mb-4">
+                <span class="text-sm text-gray-500">Sentence ${state.currentSentence + 1} of ${lesson1.sentences.length}</span>
+              </div>
+
+              <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-lg mb-4">
+                <p class="text-5xl mb-4 text-center" dir="rtl">${sentence.arabic}</p>
+                <div class="flex justify-center">
+                  <button onclick="playAudio('${sentence.arabic}')" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 flex items-center gap-2">
+                    🔊 Listen
+                  </button>
+                </div>
+              </div>
+
+              <p class="text-xl text-gray-600 italic mb-2 text-center">${sentence.transliteration}</p>
+              <p class="text-2xl font-semibold text-green-700 mb-4 text-center">${sentence.english}</p>
+
+              <div class="flex gap-2 mb-4">
+                <button onclick="toggleTransforms()" class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700">
+                  ${state.showTransforms ? 'Hide' : 'Show'} Transformations
+                </button>
+                <button onclick="toggleAnalysis()" class="flex-1 bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700">
+                  ${state.showAnalysis ? 'Hide' : 'Show'} Analysis
+                </button>
+              </div>
+
+              ${state.showTransforms ? `
+                <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 mb-4">
+                  <h3 class="font-bold text-blue-900 mb-3 text-xl">Word Breakdown:</h3>
+                  <div class="space-y-3">
+                    ${Object.entries(sentence.transforms).map(([key, value]) => {
+                      if (key === 'steps' && Array.isArray(value)) {
+                        return `<div class="bg-white p-4 rounded-lg">
+                          <p class="font-bold text-blue-800 mb-2">Step-by-Step:</p>
+                          ${value.map(step => `<p class="text-gray-700 mb-1" dir="rtl">→ ${step}</p>`).join('')}
+                        </div>`;
+                      }
+                      if (typeof value === 'string') {
+                        return `<div class="bg-white p-3 rounded">
+                          <p class="text-sm font-semibold text-blue-700">${key}:</p>
+                          <p class="text-lg" dir="rtl">${value}</p>
+                        </div>`;
+                      }
+                      return '';
+                    }).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              ${state.showAnalysis ? `
+                <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200 space-y-4">
+                  <div class="bg-white p-4 rounded-lg">
+                    <h3 class="font-bold text-purple-900 mb-2">Sentence Type:</h3>
+                    <p class="text-gray-700" dir="rtl">${sentence.analysis.type}</p>
+                  </div>
+
+                  <div class="bg-white p-4 rounded-lg">
+                    <h3 class="font-bold text-purple-900 mb-3">Components:</h3>
+                    ${sentence.analysis.parts.map(part => `<p class="text-gray-700 mb-2">• ${part}</p>`).join('')}
+                  </div>
+
+                  <div class="bg-white p-4 rounded-lg">
+                    <h3 class="font-bold text-purple-900 mb-2">Grammar Rules:</h3>
+                    <ul class="space-y-2">
+                      ${sentence.analysis.rules.map(rule => `
+                        <li class="flex items-start">
+                          <span class="text-purple-600 mr-2">✓</span>
+                          <span class="text-gray-700">${rule}</span>
+                        </li>
+                      `).join('')}
+                    </ul>
+                  </div>
+                </div>
+              ` : ''}
+            </div>
+
+            <div class="flex justify-between">
+              <button onclick="prevSentence()" ${state.currentSentence === 0 ? 'disabled' : ''} class="bg-gray-300 text-gray-700 py-2 px-6 rounded-lg font-bold hover:bg-gray-400 disabled:opacity-50">
+                ← Previous
+              </button>
+              
+              ${state.currentSentence < lesson1.sentences.length - 1 ? `
+                <button onclick="nextSentence()" class="bg-indigo-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-indigo-700">
+                  Next →
+                </button>
+              ` : `
+                <button onclick="changeSection('quiz')" class="bg-green-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-green-700">
+                  Quiz 🏆
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      } else if (state.currentSection === 'quiz') {
+        const score = Object.entries(state.quizAnswers).filter(([qIdx, answer]) => 
+          answer === lesson1.quiz[qIdx].correct
+        ).length;
+
+        app.innerHTML = `
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg border-2 border-orange-200 shadow-lg">
+              <h2 class="text-2xl font-bold text-orange-900 mb-4 flex items-center">
+                🏆 Lesson 1 Quiz
+              </h2>
+
+              ${lesson1.quiz.map((q, qIdx) => `
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                  <p class="font-semibold text-gray-800 mb-3">${qIdx + 1}. ${q.question}</p>
+                  <div class="space-y-2">
+                    ${q.options.map((option, oIdx) => `
+                      <button onclick="answerQuestion(${qIdx}, ${oIdx})" 
+                        ${state.showResults ? 'disabled' : ''}
+                        class="w-full text-left p-3 rounded-lg border-2 transition-all ${
+                          state.showResults
+                            ? oIdx === q.correct
+                              ? 'bg-green-100 border-green-500'
+                              : state.quizAnswers[qIdx] === oIdx
+                              ? 'bg-red-100 border-red-500'
+                              : 'bg-white border-gray-200'
+                            : state.quizAnswers[qIdx] === oIdx
+                            ? 'bg-blue-100 border-blue-500'
+                            : 'bg-white border-gray-200 hover:bg-gray-100'
+                        }">
+                        ${state.showResults && oIdx === q.correct ? '✓ ' : ''}
+                        ${state.showResults && state.quizAnswers[qIdx] === oIdx && oIdx !== q.correct ? '✗ ' : ''}
+                        ${option}
+                      </button>
+                    `).join('')}
+                  </div>
+                  ${state.showResults ? `
+                    <div class="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <p class="text-sm text-blue-900"><strong>Explanation:</strong> ${q.explanation}</p>
+                    </div>
+                  ` : ''}
+                </div>
+              `).join('')}
+
+              ${!state.showResults ? `
+                <button onclick="submitQuiz()" ${Object.keys(state.quizAnswers).length < lesson1.quiz.length ? 'disabled' : ''} 
+                  class="w-full bg-orange-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-orange-700 disabled:opacity-50">
+                  Submit Quiz
+                </button>
+              ` : `
+                <div class="text-center">
+                  <div class="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg border-2 border-green-300 mb-4">
+                    <h3 class="text-2xl font-bold text-green-900 mb-2">
+                      Score: ${score} / ${lesson1.quiz.length}
+                    </h3>
+                    <p class="text-lg text-gray-700">
+                      ${score === lesson1.quiz.length ? '🎉 Perfect! You mastered the grammar!' : score >= 5 ? '👏 Great job!' : '📚 Keep practicing!'}
+                    </p>
+                  </div>
+                  <div class="flex gap-2">
+                    <button onclick="changeSection('vocab-quiz')" class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700">
+                      Vocabulary Quiz 📝
+                    </button>
+                    <button onclick="resetLesson()" class="flex-1 bg-indigo-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-indigo-700">
+                      Review Lesson
+                    </button>
+                  </div>
+                </div>
+              `}
+            </div>
+          </div>
+        `;
+      } else if (state.currentSection === 'vocab-quiz') {
+        const score = Object.entries(state.quizAnswers).filter(([qIdx, answer]) => 
+          answer === lesson1.vocabQuiz[qIdx].correct
+        ).length;
+
+        app.innerHTML = `
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg border-2 border-blue-200 shadow-lg">
+              <h2 class="text-2xl font-bold text-blue-900 mb-4 flex items-center">
+                📝 Vocabulary Quiz
+              </h2>
+
+              ${lesson1.vocabQuiz.map((q, qIdx) => `
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                  <p class="font-semibold text-gray-800 mb-3">${qIdx + 1}. ${q.question}</p>
+                  <div class="space-y-2">
+                    ${q.options.map((option, oIdx) => `
+                      <button onclick="answerQuestion(${qIdx}, ${oIdx})" 
+                        ${state.showResults ? 'disabled' : ''}
+                        class="w-full text-left p-3 rounded-lg border-2 transition-all ${
+                          state.showResults
+                            ? oIdx === q.correct
+                              ? 'bg-green-100 border-green-500'
+                              : state.quizAnswers[qIdx] === oIdx
+                              ? 'bg-red-100 border-red-500'
+                              : 'bg-white border-gray-200'
+                            : state.quizAnswers[qIdx] === oIdx
+                            ? 'bg-blue-100 border-blue-500'
+                            : 'bg-white border-gray-200 hover:bg-gray-100'
+                        }">
+                        ${state.showResults && oIdx === q.correct ? '✓ ' : ''}
+                        ${state.showResults && state.quizAnswers[qIdx] === oIdx && oIdx !== q.correct ? '✗ ' : ''}
+                        ${option}
+                      </button>
+                    `).join('')}
+                  </div>
+                  ${state.showResults ? `
+                    <div class="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <p class="text-sm text-blue-900"><strong>Explanation:</strong> ${q.explanation}</p>
+                    </div>
+                  ` : ''}
+                </div>
+              `).join('')}
+
+              ${!state.showResults ? `
+                <button onclick="submitQuiz()" ${Object.keys(state.quizAnswers).length < lesson1.vocabQuiz.length ? 'disabled' : ''} 
+                  class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700 disabled:opacity-50">
+                  Submit Vocabulary Quiz
+                </button>
+              ` : `
+                <div class="text-center">
+                  <div class="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg border-2 border-green-300 mb-4">
+                    <h3 class="text-2xl font-bold text-green-900 mb-2">
+                      Vocabulary Score: ${score} / ${lesson1.vocabQuiz.length}
+                    </h3>
+                    <p class="text-lg text-gray-700">
+                      ${score === lesson1.vocabQuiz.length ? '🎉 Perfect vocabulary!' : score >= 7 ? '👏 Great!' : '📚 Keep studying!'}
+                    </p>
+                  </div>
+                  <button onclick="resetLesson()" class="bg-indigo-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-indigo-700">
+                    Back to Start
+                  </button>
+                </div>
+              `}
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function changeSection(section) {
+      state.currentSection = section;
+      state.quizAnswers = {};
+      state.showResults = false;
+      render();
+    }
+
+    function nextSentence() {
+      if (state.currentSentence < lesson1.sentences.length - 1) {
+        state.currentSentence++;
+        state.showAnalysis = false;
+        state.showTransforms = false;
+        render();
+      }
+    }
+
+    function prevSentence() {
+      if (state.currentSentence > 0) {
+        state.currentSentence--;
+        state.showAnalysis = false;
+        state.showTransforms = false;
+        render();
+      }
+    }
+
+    function toggleAnalysis() {
+      state.showAnalysis = !state.showAnalysis;
+      render();
+    }
+
+    function toggleTransforms() {
+      state.showTransforms = !state.showTransforms;
+      render();
+    }
+
+    function answerQuestion(qIdx, oIdx) {
+      if (!state.showResults) {
+        state.quizAnswers[qIdx] = oIdx;
+        render();
+      }
+    }
+
+    function submitQuiz() {
+      state.showResults = true;
+      render();
+    }
+
+    function resetLesson() {
+      state = {
+        currentSection: 'intro',
+        currentSentence: 0,
+        showAnalysis: false,
+        showTransforms: false,
+        quizAnswers: {},
+        showResults: false
+      };
+      render();
+    }
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>
