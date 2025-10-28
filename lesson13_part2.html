@@ -1,545 +1,139 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arabic Grammar Teacher - Lesson 13 Part 2</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    [dir="rtl"] {
-      direction: rtl;
-      text-align: right;
-    }
-  </style>
-</head>
-<body class="bg-gradient-to-br from-indigo-100 via-blue-100 to-purple-100 min-h-screen p-6">
-  <div class="max-w-4xl mx-auto">
-    <div class="bg-white rounded-2xl shadow-2xl p-8">
-      <div class="mb-6 pb-4 border-b-2 border-gray-200">
-        <h1 class="text-3xl font-bold text-center text-indigo-900">
-          Madina Arabic - Lesson 13 Part 2
-        </h1>
-        <p class="text-center text-gray-600 mt-2">Plurals & Transformations</p>
-      </div>
-
-      <div id="app"></div>
-    </div>
-  </div>
-
-  <script>
-    const lesson13 = {
-      title: "الدَّرْسُ الثَّالِثَ عَشَرَ - Lesson 13 (Part 2)",
-      subtitle: "Plural Forms (الجَمْع)",
-
-      sentences: [
-        {
-          arabic: "هَؤُلاَءِ مُسْلِمُونَ",
-          transliteration: "haa'ulaa'i muslimūna",
-          english: "These are Muslims (masculine)",
-          transforms: {
-            masc: "مُسْلِمٌ (muslimun) - a Muslim (masc.)",
-            fem: "مُسْلِمَةٌ (muslimatun) - a Muslim (fem.)",
-            plurMasc: "مُسْلِمُونَ (nom) / مُسْلِمِينَ (acc/gen)",
-            plurFem: "مُسْلِمَاتٌ (muslimātun)",
-            steps: [
-              "مُسْلِمٌ → add ة → مُسْلِمَةٌ (feminine)",
-              "مُسْلِمٌ → add ُونَ → مُسْلِمُونَ (masc. plural)",
-              "مُسْلِمَةٌ → remove ة, add َاتٌ → مُسْلِمَاتٌ (fem. plural)"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
-            parts: [
-              "هَؤُلاَءِ - Mubtada (Subject) - Plural Demonstrative",
-              "مُسْلِمُونَ - Khabar (Predicate) - Sound Masc. Plural (Nominative: ـُونَ)"
-            ],
-            rules: [
-              "هَؤُلاَءِ is used for ALL plurals (masc. and fem.)",
-              "Sound Masc. Plural: ـُونَ (nom), ـِينَ (acc/gen)",
-              "Drop ن when word is mudaaf"
-            ]
-          }
-        },
-        {
-          arabic: "هَؤُلاَءِ مُسْلِمَاتٌ",
-          transliteration: "haa'ulaa'i muslimātun",
-          english: "These are Muslim women",
-          transforms: {
-            masc: "مُسْلِمٌ (muslimun)",
-            fem: "مُسْلِمَةٌ (muslimatun)",
-            plurFem: "مُسْلِمَاتٌ (muslimātun)",
-            steps: [
-              "مُسْلِمٌ → add ة → مُسْلِمَةٌ",
-              "مُسْلِمَةٌ → remove ة → مُسْلِمَ",
-              "مُسْلِمَ → add َاتٌ → مُسْلِمَاتٌ"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
-            parts: [
-              "هَؤُلاَءِ - Mubtada - Plural Demonstrative",
-              "مُسْلِمَاتٌ - Khabar - Sound Fem. Plural (takes normal tanween)"
-            ],
-            rules: [
-              "Sound Fem. Plural: remove ة, add ـَاتٌ",
-              "Takes regular case endings unlike masculine plural",
-              "Pattern: ـَاتٌ (nom), ـَاتٍ (acc), ـَاتٍ (gen)"
-            ]
-          }
-        },
-        {
-          arabic: "أُولَـٰئِكَ طُلاَّبٌ جُدُدٌ",
-          transliteration: "ulaa'ika tullābun jududun",
-          english: "Those are new students",
-          transforms: {
-            masc: "طَالِبٌ (taalibun) - student",
-            fem: "طَالِبَةٌ (taalibatun)",
-            plurMasc: "طُلاَّبٌ (tullābun) - broken plural",
-            plurFem: "طَالِبَاتٌ (taalibātun) - sound plural",
-            adjMasc: "جَدِيدٌ (jadīdun) - new",
-            adjPlur: "جُدُدٌ (jududun) - new (plural)",
-            steps: [
-              "طَالِبٌ (فَاعِل pattern) → طُلاَّبٌ (فُعَّال pattern)",
-              "جَدِيدٌ (فَعِيل) → جُدُدٌ (فُعُل) broken plural"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
-            parts: [
-              "أُولَـٰئِكَ - Mubtada - Distant Plural Demonstrative",
-              "طُلاَّبٌ - Khabar and Mawsoof - Broken Plural",
-              "جُدُدٌ - Sifa (Adjective) - Broken Plural"
-            ],
-            rules: [
-              "Broken plurals change internal vowel pattern",
-              "Take normal tanween like singular nouns",
-              "Adjectives must match in case and definiteness"
-            ]
-          }
-        },
-        {
-          arabic: "الطُّلاَّبُ فِي الفَصْلِ",
-          transliteration: "at-tullābu fi al-fasli",
-          english: "The students are in the classroom",
-          transforms: {
-            singIndef: "طَالِبٌ (a student)",
-            singDef: "الطَّالِبُ (the student)",
-            plurIndef: "طُلاَّبٌ (students)",
-            plurDef: "الطُّلاَّبُ (the students)",
-            steps: [
-              "طَالِبٌ (indef.) → add ال → الطَّالِبُ (definite)",
-              "طُلاَّبٌ (pl. indef.) → add ال → الطُّلاَّبُ (pl. def.)",
-              "With ال: no tanween, just single vowel"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
-            parts: [
-              "الطُّلاَّبُ - Mubtada - Marfoo' (ـُ) NO tanween",
-              "فِي - Preposition (in)",
-              "الفَصْلِ - Majroor (Genitive ـِ) - The whole phrase is Khabar"
-            ],
-            rules: [
-              "Definite nouns: no tanween, single vowel",
-              "Preposition causes following noun to be majroor",
-              "Prepositional phrase acts as khabar (Dharf Makaan)"
-            ]
-          }
-        },
-        {
-          arabic: "هُمْ مُعَلِّمُونَ كِبَارٌ",
-          transliteration: "hum mu'allimūna kibārun",
-          english: "They are senior teachers",
-          transforms: {
-            masc: "مُعَلِّمٌ (mu'allimun) - teacher",
-            fem: "مُعَلِّمَةٌ (mu'allimatun)",
-            plurMasc: "مُعَلِّمُونَ (nom) / مُعَلِّمِينَ (acc/gen)",
-            adjMasc: "كَبِيرٌ (kabīrun) - big/senior",
-            adjPlur: "كِبَارٌ (kibārun) - big (plural)",
-            steps: [
-              "مُعَلِّمٌ (مُفَعِّل) → add ُونَ → مُعَلِّمُونَ",
-              "كَبِيرٌ (فَعِيل) → كِبَارٌ (فِعَال) broken plural"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
-            parts: [
-              "هُمْ - Mubtada - Pronoun (They - masc. plural)",
-              "مُعَلِّمُونَ - Khabar and Mawsoof - Sound Masc. Plural (ـُونَ)",
-              "كِبَارٌ - Sifa (Adjective) - Broken Plural"
-            ],
-            rules: [
-              "Pronouns can be mubtada",
-              "Sound and broken plurals can coexist",
-              "Adjective matches noun in case and number"
-            ]
-          }
-        },
-        {
-          arabic: "رَأَيْتُ المُعَلِّمِينَ فِي المَدْرَسَةِ",
-          transliteration: "ra'aytu al-mu'allimīna fi al-madrasati",
-          english: "I saw the teachers in the school",
-          transforms: {
-            singNom: "المُعَلِّمُ (nom)",
-            singAcc: "المُعَلِّمَ (acc)",
-            plurNom: "المُعَلِّمُونَ (nom: ـُونَ)",
-            plurAcc: "المُعَلِّمِينَ (acc/gen: ـِينَ)",
-            steps: [
-              "Nominative: المُعَلِّمُونَ (ـُونَ)",
-              "Accusative: المُعَلِّمِينَ (ـِينَ)",
-              "KEY: ـُونَ changes to ـِينَ in acc/gen!"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ فِعْلِيَّةٌ (VERBAL Sentence)",
-            parts: [
-              "رَأَيْتُ - Verb (I saw) + Subject (تُ = I)",
-              "المُعَلِّمِينَ - Maf'ool bihi (Direct Object) - ACCUSATIVE (ـِينَ)",
-              "فِي المَدْرَسَةِ - Prepositional phrase (in the school)"
-            ],
-            rules: [
-              "VERBAL sentence (starts with verb)",
-              "Direct object is ALWAYS accusative",
-              "Sound Masc. Plural: ـُونَ (nom) → ـِينَ (acc/gen)"
-            ]
-          }
-        },
-        {
-          arabic: "كُتُبُ الطُّلاَّبِ جَدِيدَةٌ",
-          transliteration: "kutubu at-tullābi jadīdatun",
-          english: "The students' books are new",
-          transforms: {
-            masc: "كِتَابٌ (kitābun) - a book",
-            plur: "كُتُبٌ (kutubun) - books",
-            adjMasc: "جَدِيدٌ (new - masc.)",
-            adjFem: "جَدِيدَةٌ (new - fem.)",
-            adjPlur: "جُدُدٌ (new - plural)",
-            steps: [
-              "كِتَابٌ (فِعَال) → كُتُبٌ (فُعُل) broken plural",
-              "NON-INTELLIGENT plural → FEMININE SINGULAR!",
-              "So: كُتُبٌ takes جَدِيدَةٌ (fem. sg) NOT جُدُدٌ!"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
-            parts: [
-              "كُتُبُ - Mubtada and Mudaaf - Marfoo' (NO tanween)",
-              "الطُّلاَّبِ - Mudaaf Ilayhi - Majroor (ـِ)",
-              "جَدِيدَةٌ - Khabar - FEMININE SINGULAR!"
-            ],
-            rules: [
-              "NON-INTELLIGENT broken plurals = FEMININE SINGULAR",
-              "كُتُب (books) takes جَدِيدَةٌ NOT جَدِيد or جُدُد",
-              "This is a fundamental Arabic rule!"
-            ]
-          }
-        }
-      ],
-
-      quiz: [
-        {
-          question: "What is the plural nominative form of مُسْلِم?",
-          options: ["مُسْلِمِينَ", "مُسْلِمُونَ", "مُسْلِمَاتٌ", "مُسْلِمٌ"],
-          correct: 1,
-          explanation: "مُسْلِمُونَ is the nominative form. Sound masculine plural: ـُونَ (nom)."
-        },
-        {
-          question: "How do you form feminine plural of مُسْلِمَة?",
-          options: ["Add ُونَ", "Remove ة, add َاتٌ", "Change to مُسْلِمِينَ", "Keep same"],
-          correct: 1,
-          explanation: "Remove ة and add ـَاتٌ. مُسْلِمَةٌ → مُسْلِمَاتٌ (sound feminine plural)."
-        },
-        {
-          question: "In accusative, what does مُعَلِّمُونَ become?",
-          options: ["مُعَلِّمُونَ", "مُعَلِّمِينَ", "مُعَلِّمَاتٌ", "مُعَلِّمٌ"],
-          correct: 1,
-          explanation: "مُعَلِّمِينَ. Sound masculine plural in acc/gen: ـُونَ → ـِينَ."
-        },
-        {
-          question: "What is the broken plural of كِتَاب?",
-          options: ["كِتَابُونَ", "كِتَابَاتٌ", "كُتُبٌ", "كِتَابٌ"],
-          correct: 2,
-          explanation: "كُتُبٌ is the broken plural. Pattern: كِتَاب (فِعَال) → كُتُب (فُعُل)."
-        },
-        {
-          question: "Which adjective for كُتُبٌ (books)?",
-          options: ["جَدِيدٌ (masc. sg)", "جَدِيدَةٌ (fem. sg)", "جُدُدٌ (plural)", "All correct"],
-          correct: 1,
-          explanation: "جَدِيدَةٌ! Non-intelligent broken plurals = FEMININE SINGULAR."
-        },
-        {
-          question: "Demonstrative for ALL plurals?",
-          options: ["هَـٰذَا", "هَـٰذِهِ", "هَؤُلاَءِ", "هُمْ"],
-          correct: 2,
-          explanation: "هَؤُلاَءِ is used for both masculine and feminine plurals (near)."
-        }
-      ]
-    };
-
-    let state = {
-      currentSection: 'intro',
-      currentSentence: 0,
-      showAnalysis: false,
-      showTransforms: false,
-      quizAnswers: {},
-      showResults: false
-    };
-
-    function playAudio(text) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ar-SA';
-      utterance.rate = 0.65;
-      speechSynthesis.speak(utterance);
-    }
-
-    function render() {
-      const app = document.getElementById('app');
-      
-      if (state.currentSection === 'intro') {
-        app.innerHTML = `
-          <div class="space-y-6">
-            <div class="text-center">
-              <h1 class="text-4xl font-bold text-indigo-900 mb-2" dir="rtl">${lesson13.title}</h1>
-              <h2 class="text-2xl text-gray-700 mb-4" dir="rtl">${lesson13.subtitle}</h2>
-            </div>
-            
-            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-lg border-2 border-indigo-200">
-              <h3 class="text-xl font-bold text-indigo-900 mb-3">📚 Lesson 13 Part 2 Focus:</h3>
-              <ul class="space-y-2 text-gray-700">
-                <li>• Sound Masculine Plural (جَمْعُ المُذَكَّرِ السَّالِم)</li>
-                <li>• Sound Feminine Plural (جَمْعُ المُؤَنَّثِ السَّالِم)</li>
-                <li>• Broken Plural (جَمْعُ التَّكْسِير)</li>
-                <li>• Non-Intelligent Plural Rule</li>
-                <li>• Word Transformations: Masc → Fem → Plural</li>
-              </ul>
-            </div>
-
-            <button onclick="changeSection('lesson')" class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-indigo-700 hover:to-blue-700">
-              Begin Lesson →
-            </button>
-          </div>
-        `;
-      } else if (state.currentSection === 'lesson') {
-        const sentence = lesson13.sentences[state.currentSentence];
-        app.innerHTML = `
-          <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg border-2 border-indigo-200 shadow-lg">
-              <div class="text-center mb-4">
-                <span class="text-sm text-gray-500">Sentence ${state.currentSentence + 1} of ${lesson13.sentences.length}</span>
-              </div>
-
-              <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-lg mb-4">
-                <p class="text-5xl mb-4 text-center" dir="rtl">${sentence.arabic}</p>
-                <div class="flex justify-center">
-                  <button onclick="playAudio('${sentence.arabic}')" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 flex items-center gap-2">
-                    🔊 Listen
-                  </button>
-                </div>
-              </div>
-
-              <p class="text-xl text-gray-600 italic mb-2 text-center">${sentence.transliteration}</p>
-              <p class="text-2xl font-semibold text-green-700 mb-4 text-center">${sentence.english}</p>
-
-              <div class="flex gap-2 mb-4">
-                <button onclick="toggleTransforms()" class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700">
-                  ${state.showTransforms ? 'Hide' : 'Show'} Transformations
-                </button>
-                <button onclick="toggleAnalysis()" class="flex-1 bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700">
-                  ${state.showAnalysis ? 'Hide' : 'Show'} Analysis
-                </button>
-              </div>
-
-              ${state.showTransforms ? `
-                <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 mb-4">
-                  <h3 class="font-bold text-blue-900 mb-3 text-xl">Word Transformations:</h3>
-                  <div class="space-y-3">
-                    ${Object.entries(sentence.transforms).map(([key, value]) => {
-                      if (key === 'steps') {
-                        return `<div class="bg-white p-4 rounded-lg">
-                          <p class="font-bold text-blue-800 mb-2">Step-by-Step:</p>
-                          ${value.map(step => `<p class="text-gray-700 mb-1" dir="rtl">→ ${step}</p>`).join('')}
-                        </div>`;
-                      }
-                      return `<div class="bg-white p-3 rounded">
-                        <p class="text-sm font-semibold text-blue-700">${key}:</p>
-                        <p class="text-lg" dir="rtl">${value}</p>
-                      </div>`;
-                    }).join('')}
-                  </div>
-                </div>
-              ` : ''}
-
-              ${state.showAnalysis ? `
-                <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200 space-y-4">
-                  <div class="bg-white p-4 rounded-lg">
-                    <h3 class="font-bold text-purple-900 mb-2">Sentence Type:</h3>
-                    <p class="text-gray-700" dir="rtl">${sentence.analysis.type}</p>
-                  </div>
-
-                  <div class="bg-white p-4 rounded-lg">
-                    <h3 class="font-bold text-purple-900 mb-3">Components:</h3>
-                    ${sentence.analysis.parts.map(part => `<p class="text-gray-700 mb-2">• ${part}</p>`).join('')}
-                  </div>
-
-                  <div class="bg-white p-4 rounded-lg">
-                    <h3 class="font-bold text-purple-900 mb-2">Grammar Rules:</h3>
-                    <ul class="space-y-2">
-                      ${sentence.analysis.rules.map(rule => `
-                        <li class="flex items-start">
-                          <span class="text-purple-600 mr-2">✓</span>
-                          <span class="text-gray-700">${rule}</span>
-                        </li>
-                      `).join('')}
-                    </ul>
-                  </div>
-                </div>
-              ` : ''}
-            </div>
-
-            <div class="flex justify-between">
-              <button onclick="prevSentence()" ${state.currentSentence === 0 ? 'disabled' : ''} class="bg-gray-300 text-gray-700 py-2 px-6 rounded-lg font-bold hover:bg-gray-400 disabled:opacity-50">
-                ← Previous
-              </button>
-              
-              ${state.currentSentence < lesson13.sentences.length - 1 ? `
-                <button onclick="nextSentence()" class="bg-indigo-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-indigo-700">
-                  Next →
-                </button>
-              ` : `
-                <button onclick="changeSection('quiz')" class="bg-green-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-green-700">
-                  Quiz 🏆
-                </button>
-              `}
-            </div>
-          </div>
-        `;
-      } else if (state.currentSection === 'quiz') {
-        const score = Object.entries(state.quizAnswers).filter(([qIdx, answer]) => 
-          answer === lesson13.quiz[qIdx].correct
-        ).length;
-
-        app.innerHTML = `
-          <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg border-2 border-orange-200 shadow-lg">
-              <h2 class="text-2xl font-bold text-orange-900 mb-4">🏆 Lesson 13 Part 2 Quiz</h2>
-
-              ${lesson13.quiz.map((q, qIdx) => `
-                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
-                  <p class="font-semibold text-gray-800 mb-3">${qIdx + 1}. ${q.question}</p>
-                  <div class="space-y-2">
-                    ${q.options.map((option, oIdx) => `
-                      <button onclick="answerQuestion(${qIdx}, ${oIdx})" 
-                        ${state.showResults ? 'disabled' : ''}
-                        class="w-full text-left p-3 rounded-lg border-2 transition-all ${
-                          state.showResults
-                            ? oIdx === q.correct
-                              ? 'bg-green-100 border-green-500'
-                              : state.quizAnswers[qIdx] === oIdx
-                              ? 'bg-red-100 border-red-500'
-                              : 'bg-white border-gray-200'
-                            : state.quizAnswers[qIdx] === oIdx
-                            ? 'bg-blue-100 border-blue-500'
-                            : 'bg-white border-gray-200 hover:bg-gray-100'
-                        }">
-                        ${state.showResults && oIdx === q.correct ? '✓ ' : ''}
-                        ${state.showResults && state.quizAnswers[qIdx] === oIdx && oIdx !== q.correct ? '✗ ' : ''}
-                        ${option}
-                      </button>
-                    `).join('')}
-                  </div>
-                  ${state.showResults ? `
-                    <div class="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <p class="text-sm text-blue-900"><strong>Explanation:</strong> ${q.explanation}</p>
-                    </div>
-                  ` : ''}
-                </div>
-              `).join('')}
-
-              ${!state.showResults ? `
-                <button onclick="submitQuiz()" ${Object.keys(state.quizAnswers).length < lesson13.quiz.length ? 'disabled' : ''} 
-                  class="w-full bg-orange-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-orange-700 disabled:opacity-50">
-                  Submit Quiz
-                </button>
-              ` : `
-                <div class="text-center">
-                  <div class="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg border-2 border-green-300 mb-4">
-                    <h3 class="text-2xl font-bold text-green-900 mb-2">
-                      Score: ${score} / ${lesson13.quiz.length}
-                    </h3>
-                    <p class="text-lg text-gray-700">
-                      ${score === lesson13.quiz.length ? '🎉 Perfect!' : score >= 4 ? '👏 Great!' : '📚 Keep practicing!'}
-                    </p>
-                  </div>
-                  <button onclick="resetLesson()" class="bg-indigo-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-indigo-700">
-                    Review Lesson
-                  </button>
-                </div>
-              `}
-            </div>
-          </div>
-        `;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arabic Grammar Mobile App - Lesson 13 Part 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/framer-motion@11.0.5/dist/framer-motion.umd.js"></script>
+    <style>
+      [dir="rtl"] {
+        direction: rtl;
+        text-align: right;
       }
-    }
-
-    function changeSection(section) {
-      state.currentSection = section;
-      render();
-    }
-
-    function nextSentence() {
-      if (state.currentSentence < lesson13.sentences.length - 1) {
-        state.currentSentence++;
-        state.showAnalysis = false;
-        state.showTransforms = false;
-        render();
+      html, body {
+        overflow-x: hidden;
       }
-    }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-indigo-100 via-blue-100 to-purple-100 min-h-screen flex flex-col">
+    <header class="sticky top-0 bg-white/80 backdrop-blur-lg border-b border-indigo-200 py-3 z-20">
+      <h1 class="text-xl font-bold text-center text-indigo-900">
+        Madina Arabic - Lesson 13 Part 2
+      </h1>
+      <p class="text-center text-gray-600 text-sm">Interactive Grammar Trainer</p>
+    </header>
 
-    function prevSentence() {
-      if (state.currentSentence > 0) {
-        state.currentSentence--;
-        state.showAnalysis = false;
-        state.showTransforms = false;
-        render();
-      }
-    }
+    <main id="app" class="flex-1 overflow-y-auto p-4 space-y-4"></main>
 
-    function toggleAnalysis() {
-      state.showAnalysis = !state.showAnalysis;
-      render();
-    }
+    <nav id="bottom-bar" class="sticky bottom-0 bg-white/90 backdrop-blur-md border-t border-gray-200 flex justify-around py-3">
+      <button onclick="prevSentence()" id="prevBtn" class="disabled:opacity-40 text-indigo-700 font-semibold text-sm flex flex-col items-center">
+        ⬅️<span>Prev</span>
+      </button>
+      <button onclick="toggleTransforms()" id="transBtn" class="text-blue-700 font-semibold text-sm flex flex-col items-center">
+        🔄<span>Transform</span>
+      </button>
+      <button onclick="toggleAnalysis()" id="analysisBtn" class="text-purple-700 font-semibold text-sm flex flex-col items-center">
+        📘<span>Analysis</span>
+      </button>
+      <button onclick="nextSentence()" id="nextBtn" class="text-indigo-700 font-semibold text-sm flex flex-col items-center">
+        <span>Next</span>➡️
+      </button>
+    </nav>
 
-    function toggleTransforms() {
-      state.showTransforms = !state.showTransforms;
-      render();
-    }
-
-    function answerQuestion(qIdx, oIdx) {
-      if (!state.showResults) {
-        state.quizAnswers[qIdx] = oIdx;
-        render();
-      }
-    }
-
-    function submitQuiz() {
-      state.showResults = true;
-      render();
-    }
-
-    function resetLesson() {
-      state = {
-        currentSection: 'intro',
-        currentSentence: 0,
-        showAnalysis: false,
-        showTransforms: false,
-        quizAnswers: {},
-        showResults: false
+    <script>
+      const lesson = {
+        sentences: [
+          {
+            arabic: "هَؤُلاَءِ مُسْلِمُونَ",
+            transliteration: "haa'ulaa'i muslimūna",
+            english: "These are Muslims (masculine)",
+            analysis: {
+              type: "Nominal Sentence",
+              parts: ["هَؤُلاَءِ - Mubtada (Subject)", "مُسْلِمُونَ - Khabar (Predicate)"]
+            },
+            transforms: [
+              "مُسْلِمٌ → مُسْلِمَةٌ (feminine)",
+              "مُسْلِمٌ → مُسْلِمُونَ (masc. plural)",
+              "مُسْلِمَةٌ → مُسْلِمَاتٌ (fem. plural)"
+            ]
+          },
+          {
+            arabic: "هَؤُلاَءِ مُسْلِمَاتٌ",
+            transliteration: "haa'ulaa'i muslimātun",
+            english: "These are Muslim women",
+            analysis: {
+              type: "Nominal Sentence",
+              parts: ["هَؤُلاَءِ - Mubtada", "مُسْلِمَاتٌ - Khabar"]
+            },
+            transforms: [
+              "مُسْلِمَةٌ → remove ة, add َاتٌ → مُسْلِمَاتٌ"
+            ]
+          }
+        ]
       };
-      render();
-    }
 
-    // Initial render
-    render();
-  </script>
-</body>
+      let state = {
+        index: 0,
+        showAnalysis: false,
+        showTransforms: false
+      };
+
+      function playAudio(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ar-SA';
+        utterance.rate = 0.65;
+        speechSynthesis.speak(utterance);
+      }
+
+      function render() {
+        const s = lesson.sentences[state.index];
+        const app = document.getElementById('app');
+
+        app.innerHTML = `
+          <section class="bg-white rounded-2xl shadow-lg p-5 text-center space-y-3">
+            <p class="text-4xl text-indigo-900 font-bold" dir="rtl">${s.arabic}</p>
+            <button onclick="playAudio('${s.arabic}')" class="bg-green-600 text-white px-4 py-2 rounded-full text-sm">🔊 Listen</button>
+            <p class="text-gray-700 italic text-sm">${s.transliteration}</p>
+            <p class="text-lg font-semibold text-green-700">${s.english}</p>
+          </section>
+
+          ${state.showTransforms ? `
+            <section class="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-2">
+              <h3 class="font-bold text-blue-800">Word Transformations:</h3>
+              ${s.transforms.map(t => `<p dir="rtl">→ ${t}</p>`).join('')}
+            </section>` : ''}
+
+          ${state.showAnalysis ? `
+            <section class="bg-purple-50 border border-purple-200 rounded-lg p-4 space-y-2">
+              <h3 class="font-bold text-purple-800">Sentence Analysis:</h3>
+              <p>${s.analysis.type}</p>
+              ${s.analysis.parts.map(p => `<p>• ${p}</p>`).join('')}
+            </section>` : ''}
+        `;
+
+        document.getElementById('prevBtn').disabled = state.index === 0;
+        document.getElementById('nextBtn').disabled = state.index === lesson.sentences.length - 1;
+      }
+
+      function prevSentence() {
+        if (state.index > 0) state.index--;
+        render();
+      }
+      function nextSentence() {
+        if (state.index < lesson.sentences.length - 1) state.index++;
+        render();
+      }
+      function toggleAnalysis() {
+        state.showAnalysis = !state.showAnalysis;
+        render();
+      }
+      function toggleTransforms() {
+        state.showTransforms = !state.showTransforms;
+        render();
+      }
+
+      render();
+    </script>
+  </body>
 </html>
