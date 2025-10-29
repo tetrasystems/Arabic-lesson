@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Arabic Grammar Teacher - Lesson 13 Part A</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -10,16 +10,71 @@
       direction: rtl;
       text-align: right;
     }
+    
+    /* Mobile optimizations */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Larger touch targets for mobile */
+    button {
+      min-height: 48px;
+      touch-action: manipulation;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Prevent text size adjustment on orientation change */
+    body {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    
+    /* Better spacing for mobile */
+    @media (max-width: 640px) {
+      .mobile-padding {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      
+      .mobile-text {
+        font-size: 1rem !important;
+      }
+      
+      .mobile-title {
+        font-size: 1.5rem !important;
+      }
+      
+      .mobile-arabic {
+        font-size: 2rem !important;
+      }
+      
+      /* Make buttons easier to tap on mobile */
+      button {
+        min-height: 52px;
+        font-size: 1.05rem;
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
+      }
+    }
   </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-100 via-blue-100 to-purple-100 min-h-screen p-6">
-  <div class="max-w-4xl mx-auto">
-    <div class="bg-white rounded-2xl shadow-2xl p-8">
-      <div class="mb-6 pb-4 border-b-2 border-gray-200">
-        <h1 class="text-3xl font-bold text-center text-indigo-900">
+<body class="bg-gradient-to-br from-indigo-100 via-blue-100 to-purple-100 min-h-screen">
+  <div class="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
+    <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-2xl p-4 sm:p-8">
+      <div class="mb-4 sm:mb-6 pb-3 sm:pb-4 border-b-2 border-gray-200">
+        <h1 class="text-2xl sm:text-3xl font-bold text-center text-indigo-900">
           Madina Arabic - Lesson 13 Part A
         </h1>
-        <p class="text-center text-gray-600 mt-2">Pronouns & Demonstratives</p>
+        <p class="text-center text-gray-600 mt-2 text-sm sm:text-base">Pronouns & Demonstratives</p>
       </div>
 
       <div id="app"></div>
@@ -202,72 +257,48 @@
           analysis: {
             type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
             parts: [
-              "هَـٰذَا - Mubtada - Demonstrative pronoun (this-masc)",
-              "كِتَابٌ - Khabar and Mawsoof - Masculine noun",
-              "جَدِيدٌ - Sifa (Adjective) - Must match noun"
+              "هَـٰذَا - Mubtada - Near demonstrative (this - masc.)",
+              "كِتَابٌ - Khabar and Mawsoof - Indefinite masculine noun",
+              "جَدِيدٌ - Sifa (Adjective) - Matches noun in gender and case"
             ],
             rules: [
-              "Demonstratives can be mubtada",
-              "هَـٰذَا for masculine, هَـٰذِهِ for feminine",
-              "Adjective must match noun in gender, case, definiteness"
+              "Demonstrative pronouns can be mubtada",
+              "هَـٰذَا for near masculine, هَـٰذِهِ for near feminine",
+              "Adjective must match noun in definiteness, gender, and case"
             ]
           }
         },
         {
-          arabic: "ذَٰلِكَ بَيْتٌ كَبِيرٌ",
+          arabic: "ذَلِكَ بَيْتٌ كَبِيرٌ",
           transliteration: "dhaalika baytun kabīrun",
           english: "That is a big house",
           transforms: {
-            near: "هَـٰذَا (this - near)",
-            far: "ذَٰلِكَ (that - far)",
+            masc: "ذَلِكَ (dhaalika) - That (masc. sg far)",
+            fem: "تِلْكَ (tilka) - That (fem. sg far)",
             variants: [
-              "ذَٰلِكَ - That (masculine singular - distant)",
-              "تِلْكَ - That (feminine singular - distant)",
-              "أُولَـٰئِكَ - Those (plural - distant)"
+              "ذَلِكَ - That (masculine singular - far)",
+              "تِلْكَ - That (feminine singular - far)",
+              "ذَانِكَ - Those (masculine dual)",
+              "تَانِكَ - Those (feminine dual)",
+              "أُولَـٰئِكَ - Those (plural - all genders)"
             ],
             steps: [
-              "ذَٰلِكَ for distant masculine objects",
-              "تِلْكَ for distant feminine objects",
-              "Opposite of هَـٰذَا / هَـٰذِهِ (this)"
+              "ذَلِكَ for distant masculine singular",
+              "تِلْكَ for distant feminine singular",
+              "Used to point at things far from you"
             ]
           },
           analysis: {
             type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
             parts: [
-              "ذَٰلِكَ - Mubtada - Distant demonstrative (that-masc)",
-              "بَيْتٌ - Khabar and Mawsoof - Masculine noun",
-              "كَبِيرٌ - Sifa - Adjective matching noun"
+              "ذَلِكَ - Mubtada - Far demonstrative (that - masc.)",
+              "بَيْتٌ - Khabar and Mawsoof - Indefinite masculine noun",
+              "كَبِيرٌ - Sifa (Adjective) - Matches noun"
             ],
             rules: [
-              "ذَٰلِكَ (that-masc), تِلْكَ (that-fem) for distant objects",
-              "Opposite of هَـٰذَا / هَـٰذِهِ (this)",
-              "Same agreement rules apply"
-            ]
-          }
-        },
-        {
-          arabic: "نَحْنُ طُلاَّبٌ",
-          transliteration: "nahnu tullaabun",
-          english: "We are students",
-          transforms: {
-            singular: "أَنَا طَالِبٌ (I am a student)",
-            plural: "نَحْنُ طُلاَّبٌ (we are students)",
-            steps: [
-              "أَنَا (I) → نَحْنُ (we) for plural",
-              "طَالِبٌ (student-sg) → طُلاَّبٌ (students-broken plural)",
-              "نَحْنُ is used for all genders"
-            ]
-          },
-          analysis: {
-            type: "جُمْلَةٌ إِسْمِيَّةٌ (Nominal Sentence)",
-            parts: [
-              "نَحْنُ - Mubtada - 1st person plural pronoun (we)",
-              "طُلاَّبٌ - Khabar - Broken plural of طَالِب"
-            ],
-            rules: [
-              "نَحْنُ is the plural of أَنَا",
-              "Used for 'we' regardless of gender",
-              "Takes plural khabar"
+              "Far demonstratives: ذَلِكَ (masc), تِلْكَ (fem)",
+              "Contrast with near: هَـٰذَا (this-near) vs ذَلِكَ (that-far)",
+              "Adjective agreement is required"
             ]
           }
         }
@@ -275,40 +306,70 @@
 
       quiz: [
         {
-          question: "What is the pronoun for 'I' in Arabic?",
-          options: ["أَنْتَ", "أَنَا", "هُوَ", "نَحْنُ"],
+          question: "Which pronoun means 'I' in Arabic?",
+          options: [
+            "أَنْتَ",
+            "أَنَا",
+            "هُوَ",
+            "نَحْنُ"
+          ],
           correct: 1,
-          explanation: "أَنَا (anā) means 'I'. It's used for both masculine and feminine."
+          explanation: "أَنَا (anā) means 'I' and is used for both masculine and feminine speakers."
         },
         {
-          question: "Which pronoun is feminine: 'you' (singular)?",
-          options: ["أَنْتَ", "أَنْتِ", "هُوَ", "هِيَ"],
+          question: "What is the feminine form of أَنْتَ (you - masculine)?",
+          options: [
+            "أَنَا",
+            "أَنْتِ",
+            "هِيَ",
+            "أَنْتُمْ"
+          ],
           correct: 1,
-          explanation: "أَنْتِ (anti) is 'you' (feminine singular). أَنْتَ is masculine."
+          explanation: "أَنْتِ (anti) is the feminine singular form of 'you'."
+        },
+        {
+          question: "Which demonstrative pronoun means 'this' for masculine nouns?",
+          options: [
+            "هَـٰذِهِ",
+            "ذَلِكَ",
+            "هَـٰذَا",
+            "تِلْكَ"
+          ],
+          correct: 2,
+          explanation: "هَـٰذَا (haadhaa) means 'this' for nearby masculine singular nouns."
         },
         {
           question: "What does هُوَ mean?",
-          options: ["I", "You", "He", "She"],
+          options: [
+            "You (masculine)",
+            "I",
+            "He",
+            "They"
+          ],
           correct: 2,
-          explanation: "هُوَ (huwa) means 'he' (3rd person masculine singular)."
+          explanation: "هُوَ (huwa) is the third person masculine singular pronoun meaning 'he'."
         },
         {
-          question: "Which demonstrative is used for nearby feminine objects?",
-          options: ["هَـٰذَا", "هَـٰذِهِ", "ذَٰلِكَ", "هَؤُلاَءِ"],
+          question: "Which demonstrative is used for things that are FAR away (masculine)?",
+          options: [
+            "هَـٰذَا",
+            "ذَلِكَ",
+            "هَـٰذِهِ",
+            "هَؤُلاَءِ"
+          ],
           correct: 1,
-          explanation: "هَـٰذِهِ (haadhihi) means 'this' (feminine, near). هَـٰذَا is masculine."
+          explanation: "ذَلِكَ (dhaalika) means 'that' for distant masculine singular nouns."
         },
         {
-          question: "What is the pronoun for 'we'?",
-          options: ["أَنَا", "نَحْنُ", "أَنْتُمْ", "هُمْ"],
+          question: "What is the feminine form of هُوَ (he)?",
+          options: [
+            "أَنْتِ",
+            "هِيَ",
+            "هُمْ",
+            "نَحْنُ"
+          ],
           correct: 1,
-          explanation: "نَحْنُ (nahnu) means 'we' (1st person plural)."
-        },
-        {
-          question: "Which means 'that' (distant, masculine)?",
-          options: ["هَـٰذَا", "هَـٰذِهِ", "ذَٰلِكَ", "تِلْكَ"],
-          correct: 2,
-          explanation: "ذَٰلِكَ (dhaalika) means 'that' (masculine, distant). تِلْكَ is feminine."
+          explanation: "هِيَ (hiya) is the third person feminine singular pronoun meaning 'she'."
         }
       ]
     };
@@ -322,140 +383,156 @@
       showResults: false
     };
 
-    function playAudio(text) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'ar-SA';
-      utterance.rate = 0.65;
-      speechSynthesis.speak(utterance);
-    }
-
     function render() {
       const app = document.getElementById('app');
       
       if (state.currentSection === 'intro') {
         app.innerHTML = `
-          <div class="space-y-6">
-            <div class="text-center">
-              <h1 class="text-4xl font-bold text-indigo-900 mb-2" dir="rtl">${lesson13a.title}</h1>
-              <h2 class="text-2xl text-gray-700 mb-4" dir="rtl">${lesson13a.subtitle}</h2>
+          <div class="space-y-4 sm:space-y-6">
+            <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-4 sm:p-6 rounded-lg border-2 border-blue-300">
+              <h2 class="text-xl sm:text-2xl font-bold text-indigo-900 mb-3" dir="rtl">${lesson13a.title}</h2>
+              <p class="text-base sm:text-lg text-gray-700 mb-2" dir="rtl">${lesson13a.subtitle}</p>
             </div>
-            
-            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-lg border-2 border-indigo-200">
-              <h3 class="text-xl font-bold text-indigo-900 mb-3 flex items-center">
-                👥 Lesson 13 Part A Focus:
-              </h3>
-              <ul class="space-y-2 text-gray-700">
-                <li>• Detached Pronouns (الضَّمَائِرُ المُنْفَصِلَة)</li>
-                <li>• First Person: أَنَا (I), نَحْنُ (we)</li>
-                <li>• Second Person: أَنْتَ، أَنْتِ (you)</li>
-                <li>• Third Person: هُوَ، هِيَ (he, she)</li>
-                <li>• Demonstrative Pronouns: هَـٰذَا، هَـٰذِهِ، ذَٰلِكَ</li>
-                <li>• Gender Agreement Rules</li>
+
+            <div class="bg-white p-4 sm:p-6 rounded-lg border-2 border-gray-200 shadow-sm">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-3 sm:mb-4">📚 What You'll Learn:</h3>
+              <ul class="space-y-2 sm:space-y-3">
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 flex-shrink-0">✓</span>
+                  <span>Personal Pronouns (أَنَا, أَنْتَ, أَنْتِ, هُوَ, هِيَ)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 flex-shrink-0">✓</span>
+                  <span>Near Demonstratives (هَـٰذَا, هَـٰذِهِ)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 flex-shrink-0">✓</span>
+                  <span>Far Demonstratives (ذَلِكَ, تِلْكَ)</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 flex-shrink-0">✓</span>
+                  <span>Gender agreement in sentences</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 flex-shrink-0">✓</span>
+                  <span>How to use pronouns as sentence subjects</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-600 mr-2 flex-shrink-0">✓</span>
+                  <span>Demonstrative pronouns for pointing</span>
+                </li>
               </ul>
             </div>
 
-            <button onclick="changeSection('lesson')" class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:from-indigo-700 hover:to-blue-700">
-              Begin Lesson →
+            <button onclick="changeSection('lesson')" class="w-full bg-indigo-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-indigo-700">
+              Start Lesson →
             </button>
           </div>
         `;
       } else if (state.currentSection === 'lesson') {
         const sentence = lesson13a.sentences[state.currentSentence];
+        
         app.innerHTML = `
-          <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg border-2 border-indigo-200 shadow-lg">
-              <div class="text-center mb-4">
-                <span class="text-sm text-gray-500">Sentence ${state.currentSentence + 1} of ${lesson13a.sentences.length}</span>
+          <div class="space-y-4 sm:space-y-6">
+            <div class="flex items-center justify-between mb-3 sm:mb-4">
+              <span class="text-xs sm:text-sm text-gray-600 font-semibold">
+                Sentence ${state.currentSentence + 1} of ${lesson13a.sentences.length}
+              </span>
+              <div class="bg-gray-200 rounded-full h-2 w-32 sm:w-48">
+                <div class="bg-indigo-600 h-2 rounded-full transition-all" style="width: ${((state.currentSentence + 1) / lesson13a.sentences.length) * 100}%"></div>
               </div>
-
-              <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-lg mb-4">
-                <p class="text-5xl mb-4 text-center" dir="rtl">${sentence.arabic}</p>
-                <div class="flex justify-center">
-                  <button onclick="playAudio('${sentence.arabic}')" class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 flex items-center gap-2">
-                    🔊 Listen
-                  </button>
-                </div>
-              </div>
-
-              <p class="text-xl text-gray-600 italic mb-2 text-center">${sentence.transliteration}</p>
-              <p class="text-2xl font-semibold text-green-700 mb-4 text-center">${sentence.english}</p>
-
-              <div class="flex gap-2 mb-4">
-                <button onclick="toggleTransforms()" class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700">
-                  ${state.showTransforms ? 'Hide' : 'Show'} Transformations
-                </button>
-                <button onclick="toggleAnalysis()" class="flex-1 bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700">
-                  ${state.showAnalysis ? 'Hide' : 'Show'} Analysis
-                </button>
-              </div>
-
-              ${state.showTransforms ? `
-                <div class="bg-blue-50 p-6 rounded-lg border-2 border-blue-200 mb-4">
-                  <h3 class="font-bold text-blue-900 mb-3 text-xl">Pronoun Forms & Transformations:</h3>
-                  <div class="space-y-3">
-                    ${Object.entries(sentence.transforms).map(([key, value]) => {
-                      if (key === 'variants' && Array.isArray(value)) {
-                        return `<div class="bg-white p-4 rounded-lg">
-                          <p class="font-bold text-blue-800 mb-2">All Forms:</p>
-                          ${value.map(v => `<p class="text-gray-700 mb-1" dir="rtl">• ${v}</p>`).join('')}
-                        </div>`;
-                      }
-                      if (key === 'steps' && Array.isArray(value)) {
-                        return `<div class="bg-white p-4 rounded-lg">
-                          <p class="font-bold text-blue-800 mb-2">Step-by-Step:</p>
-                          ${value.map(step => `<p class="text-gray-700 mb-1" dir="rtl">→ ${step}</p>`).join('')}
-                        </div>`;
-                      }
-                      if (typeof value === 'string') {
-                        return `<div class="bg-white p-3 rounded">
-                          <p class="text-sm font-semibold text-blue-700">${key}:</p>
-                          <p class="text-lg" dir="rtl">${value}</p>
-                        </div>`;
-                      }
-                      return '';
-                    }).join('')}
-                  </div>
-                </div>
-              ` : ''}
-
-              ${state.showAnalysis ? `
-                <div class="bg-purple-50 p-6 rounded-lg border-2 border-purple-200 space-y-4">
-                  <div class="bg-white p-4 rounded-lg">
-                    <h3 class="font-bold text-purple-900 mb-2">Sentence Type:</h3>
-                    <p class="text-gray-700" dir="rtl">${sentence.analysis.type}</p>
-                  </div>
-
-                  <div class="bg-white p-4 rounded-lg">
-                    <h3 class="font-bold text-purple-900 mb-3">Components:</h3>
-                    ${sentence.analysis.parts.map(part => `<p class="text-gray-700 mb-2">• ${part}</p>`).join('')}
-                  </div>
-
-                  <div class="bg-white p-4 rounded-lg">
-                    <h3 class="font-bold text-purple-900 mb-2">Grammar Rules:</h3>
-                    <ul class="space-y-2">
-                      ${sentence.analysis.rules.map(rule => `
-                        <li class="flex items-start">
-                          <span class="text-purple-600 mr-2">✓</span>
-                          <span class="text-gray-700">${rule}</span>
-                        </li>
-                      `).join('')}
-                    </ul>
-                  </div>
-                </div>
-              ` : ''}
             </div>
 
-            <div class="flex justify-between">
-              <button onclick="prevSentence()" ${state.currentSentence === 0 ? 'disabled' : ''} class="bg-gray-300 text-gray-700 py-2 px-6 rounded-lg font-bold hover:bg-gray-400 disabled:opacity-50">
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-4 sm:p-6 rounded-lg border-2 border-indigo-200">
+              <div class="text-center space-y-3 sm:space-y-4">
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-900" dir="rtl">
+                  ${sentence.arabic}
+                </p>
+                <p class="text-base sm:text-lg text-gray-600 italic">
+                  ${sentence.transliteration}
+                </p>
+                <p class="text-lg sm:text-xl text-gray-800 font-semibold">
+                  ${sentence.english}
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button onclick="toggleTransforms()" class="flex-1 bg-indigo-600 text-white py-3 px-4 rounded-lg font-bold hover:bg-indigo-700">
+                ${state.showTransforms ? 'Hide' : 'Show'} Transformations
+              </button>
+              <button onclick="toggleAnalysis()" class="flex-1 bg-purple-600 text-white py-3 px-4 rounded-lg font-bold hover:bg-purple-700">
+                ${state.showAnalysis ? 'Hide' : 'Show'} Analysis
+              </button>
+            </div>
+
+            ${state.showTransforms ? `
+              <div class="bg-blue-50 p-4 sm:p-6 rounded-lg border-2 border-blue-200 mb-4">
+                <h3 class="font-bold text-blue-900 mb-3 text-xl">Pronoun Forms & Transformations:</h3>
+                <div class="space-y-3">
+                  ${Object.entries(sentence.transforms).map(([key, value]) => {
+                    if (key === 'variants' && Array.isArray(value)) {
+                      return `<div class="bg-white p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 mb-2">All Forms:</p>
+                        ${value.map(v => `<p class="text-gray-700 mb-1" dir="rtl">• ${v}</p>`).join('')}
+                      </div>`;
+                    }
+                    if (key === 'steps' && Array.isArray(value)) {
+                      return `<div class="bg-white p-4 rounded-lg">
+                        <p class="font-bold text-blue-800 mb-2">Step-by-Step:</p>
+                        ${value.map(step => `<p class="text-gray-700 mb-1" dir="rtl">→ ${step}</p>`).join('')}
+                      </div>`;
+                    }
+                    if (typeof value === 'string') {
+                      return `<div class="bg-white p-3 rounded">
+                        <p class="text-sm font-semibold text-blue-700">${key}:</p>
+                        <p class="text-lg" dir="rtl">${value}</p>
+                      </div>`;
+                    }
+                    return '';
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${state.showAnalysis ? `
+              <div class="bg-purple-50 p-4 sm:p-6 rounded-lg border-2 border-purple-200 space-y-4">
+                <div class="bg-white p-4 rounded-lg">
+                  <h3 class="font-bold text-purple-900 mb-2">Sentence Type:</h3>
+                  <p class="text-gray-700" dir="rtl">${sentence.analysis.type}</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg">
+                  <h3 class="font-bold text-purple-900 mb-3">Components:</h3>
+                  ${sentence.analysis.parts.map(part => `<p class="text-gray-700 mb-2">• ${part}</p>`).join('')}
+                </div>
+
+                <div class="bg-white p-4 rounded-lg">
+                  <h3 class="font-bold text-purple-900 mb-2">Grammar Rules:</h3>
+                  <ul class="space-y-2">
+                    ${sentence.analysis.rules.map(rule => `
+                      <li class="flex items-start">
+                        <span class="text-purple-600 mr-2">✓</span>
+                        <span class="text-gray-700">${rule}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              </div>
+            ` : ''}
+
+            <div class="flex flex-col sm:flex-row justify-between gap-3 pt-4">
+              <button onclick="prevSentence()" ${state.currentSentence === 0 ? 'disabled' : ''} 
+                class="w-full sm:w-auto bg-gray-300 text-gray-700 py-2 px-6 rounded-lg font-bold hover:bg-gray-400 disabled:opacity-50">
                 ← Previous
               </button>
               
               ${state.currentSentence < lesson13a.sentences.length - 1 ? `
-                <button onclick="nextSentence()" class="bg-indigo-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-indigo-700">
+                <button onclick="nextSentence()" class="w-full sm:w-auto bg-indigo-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-indigo-700">
                   Next →
                 </button>
               ` : `
-                <button onclick="changeSection('quiz')" class="bg-green-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-green-700">
+                <button onclick="changeSection('quiz')" class="w-full sm:w-auto bg-green-600 text-white py-2 px-6 rounded-lg font-bold hover:bg-green-700">
                   Quiz 🏆
                 </button>
               `}
@@ -468,15 +545,15 @@
         ).length;
 
         app.innerHTML = `
-          <div class="space-y-6">
+          <div class="space-y-4 sm:space-y-6">
             <div class="bg-white p-6 rounded-lg border-2 border-orange-200 shadow-lg">
-              <h2 class="text-2xl font-bold text-orange-900 mb-4 flex items-center">
-                🏆 Lesson 13 Part A Quiz
-              </h2>
+              <h2 class="text-2xl font-bold text-orange-900 mb-4">🏆 Lesson 13 Part A Quiz</h2>
 
               ${lesson13a.quiz.map((q, qIdx) => `
                 <div class="mb-6 p-4 bg-gray-50 rounded-lg">
-                  <p class="font-semibold text-gray-800 mb-3">${qIdx + 1}. ${q.question}</p>
+                  <p class="font-semibold text-gray-800 mb-3">
+                    ${qIdx + 1}. ${q.question}
+                  </p>
                   <div class="space-y-2">
                     ${q.options.map((option, oIdx) => `
                       <button onclick="answerQuestion(${qIdx}, ${oIdx})" 
@@ -500,14 +577,17 @@
                   </div>
                   ${state.showResults ? `
                     <div class="mt-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                      <p class="text-sm text-blue-900"><strong>Explanation:</strong> ${q.explanation}</p>
+                      <p class="text-sm text-blue-900">
+                        <strong>Explanation:</strong> ${q.explanation}
+                      </p>
                     </div>
                   ` : ''}
                 </div>
               `).join('')}
 
               ${!state.showResults ? `
-                <button onclick="submitQuiz()" ${Object.keys(state.quizAnswers).length < lesson13a.quiz.length ? 'disabled' : ''} 
+                <button onclick="submitQuiz()" 
+                  ${Object.keys(state.quizAnswers).length < lesson13a.quiz.length ? 'disabled' : ''} 
                   class="w-full bg-orange-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-orange-700 disabled:opacity-50">
                   Submit Quiz
                 </button>
@@ -521,7 +601,7 @@
                       ${score === lesson13a.quiz.length ? '🎉 Perfect!' : score >= 4 ? '👏 Great!' : '📚 Keep practicing!'}
                     </p>
                   </div>
-                  <button onclick="resetLesson()" class="bg-indigo-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-indigo-700">
+                  <button onclick="resetLesson()" class="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-indigo-700">
                     Review Lesson
                   </button>
                 </div>
@@ -535,6 +615,7 @@
     function changeSection(section) {
       state.currentSection = section;
       render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function nextSentence() {
@@ -543,6 +624,7 @@
         state.showAnalysis = false;
         state.showTransforms = false;
         render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
@@ -552,6 +634,7 @@
         state.showAnalysis = false;
         state.showTransforms = false;
         render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
@@ -575,6 +658,7 @@
     function submitQuiz() {
       state.showResults = true;
       render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function resetLesson() {
@@ -587,6 +671,7 @@
         showResults: false
       };
       render();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Initial render
